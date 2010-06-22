@@ -1,0 +1,103 @@
+grammar it.unibo.madz.mobile.AndroidL with org.eclipse.xtext.common.Terminals
+
+generate androidL "http://www.unibo.it/madz/mobile/AndroidL"
+
+AndroidSystem : 
+	(data+=Data)*
+	(action+=Action)*
+	(serviceInterface=ServiceInterface)* 
+	(component+=Component)* 
+	application=Application ;
+
+//------------------------------------------- 
+// Component 
+//------------------------------------------- 
+Component :
+	Activity | Service ;
+
+//------------------------------------------- 
+// Service Interface
+//------------------------------------------- 
+ServiceInterface : 
+	"ServiceInterface" name=ID ;
+
+//------------------------------------------- 
+// Service
+//------------------------------------------- 
+Service : 
+	"Service" name=ID 
+	"implements" interface = [ ServiceInterface ] ;
+
+//------------------------------------------- 
+// Activity 
+//------------------------------------------- 
+Activity : 
+	"Activity" name=ID 
+	( launchable?='launchable' )? 
+	( actions += LocalAction )* 
+	( interactions += InterAction )* ;	
+	
+//------------------------------------------- 
+// LocalAction 
+//------------------------------------------- 
+LocalAction : 
+	"action" action = [ Action ] 
+	(button?="button")? ;
+	
+//------------------------------------------- 
+// InterAction 
+//------------------------------------------- 
+InterAction : 
+	ExplicitInteraction	(button?="button")? | 
+	ActionOnlyInteraction (button?="button")? ;
+
+//------------------------------------------- 
+// ExplicitInteraction 
+//------------------------------------------- 
+ExplicitInteraction : 
+	ExplicitInteractionActivity 
+	//TODO |	ExplicitInteractionService 
+	;
+	
+ExplicitInteractionActivity : 
+	"callActivity" dest = [ Activity ] 
+	( "forActiom" action = [ Action ] )? ;
+	
+ActionOnlyInteraction : 
+	"execAction" action = [ Action ] ;
+
+//------------------------------------------- 
+// Action 
+//------------------------------------------- 
+Action : 
+	"action" name=ID 
+	"data" data=[ Data ] 
+	"category" category=STRING ;
+
+//------------------------------------------- 
+// Data 
+//------------------------------------------- 
+Data :
+	"data" name=ID 
+	"scheme" scheme=STRING
+	("host" host=STRING)? 
+	("port" port=STRING)? 
+	("path" path=STRING)? ;
+	
+//------------------------------------------- 
+// Application 
+//------------------------------------------- 
+Application :
+	"Application" name=ID 
+	"avd" avd=INT 
+	("workdir" workDir=ID )? 
+	"package" packageName=URI 
+	"entryActiviy" mainActivity=[Activity] 
+	"target" target=INT
+	"path" path=ID ;
+
+URI : 
+	ID "." RestUri ; 
+
+RestUri : 
+	ID | URI ;
