@@ -1,0 +1,4 @@
+import it::unibo::madz::mobile::androidL;
+
+String pToD( String packageName ) :
+	packageName.replaceAll( "\\." , "/") ;
