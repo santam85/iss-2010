@@ -1,7 +1,0 @@
-«IMPORT it::unibo::madz::mobile::androidL»
-
-«EXTENSION templates::Extensions»
-
-«DEFINE main FOR AndroidSystem-» 
-	«EXPAND GenActivityLayout::genLayout(this) FOREACH this.component.typeSelect(Activity)» 
-«ENDDEFINE»
