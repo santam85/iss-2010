@@ -116,6 +116,13 @@ public class AndroidLSwitch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AndroidLPackage.LOCAL_OPERATION:
+      {
+        LocalOperation localOperation = (LocalOperation)theEObject;
+        T result = caseLocalOperation(localOperation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AndroidLPackage.SERVICE:
       {
         Service service = (Service)theEObject;
@@ -160,6 +167,35 @@ public class AndroidLSwitch<T>
         T result = caseExplicitInteractionActivity(explicitInteractionActivity);
         if (result == null) result = caseExplicitInteraction(explicitInteractionActivity);
         if (result == null) result = caseInterAction(explicitInteractionActivity);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroidLPackage.EXPLICIT_INTERACTION_SERVICE:
+      {
+        ExplicitInteractionService explicitInteractionService = (ExplicitInteractionService)theEObject;
+        T result = caseExplicitInteractionService(explicitInteractionService);
+        if (result == null) result = caseExplicitInteraction(explicitInteractionService);
+        if (result == null) result = caseInterAction(explicitInteractionService);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroidLPackage.USE_SERVICE:
+      {
+        UseService useService = (UseService)theEObject;
+        T result = caseUseService(useService);
+        if (result == null) result = caseExplicitInteractionService(useService);
+        if (result == null) result = caseExplicitInteraction(useService);
+        if (result == null) result = caseInterAction(useService);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AndroidLPackage.LAUNCHSERVICE:
+      {
+        Launchservice launchservice = (Launchservice)theEObject;
+        T result = caseLaunchservice(launchservice);
+        if (result == null) result = caseExplicitInteractionService(launchservice);
+        if (result == null) result = caseExplicitInteraction(launchservice);
+        if (result == null) result = caseInterAction(launchservice);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -240,6 +276,22 @@ public class AndroidLSwitch<T>
    * @generated
    */
   public T caseServiceInterface(ServiceInterface object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Local Operation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Local Operation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLocalOperation(LocalOperation object)
   {
     return null;
   }
@@ -336,6 +388,54 @@ public class AndroidLSwitch<T>
    * @generated
    */
   public T caseExplicitInteractionActivity(ExplicitInteractionActivity object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Explicit Interaction Service</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Explicit Interaction Service</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExplicitInteractionService(ExplicitInteractionService object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Use Service</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Use Service</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUseService(UseService object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Launchservice</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Launchservice</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLaunchservice(Launchservice object)
   {
     return null;
   }

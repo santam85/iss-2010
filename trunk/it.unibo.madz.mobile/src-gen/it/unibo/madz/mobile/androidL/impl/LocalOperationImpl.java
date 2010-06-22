@@ -6,40 +6,38 @@
 package it.unibo.madz.mobile.androidL.impl;
 
 import it.unibo.madz.mobile.androidL.AndroidLPackage;
+import it.unibo.madz.mobile.androidL.InputType;
 import it.unibo.madz.mobile.androidL.LocalOperation;
-import it.unibo.madz.mobile.androidL.ServiceInterface;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Service Interface</b></em>'.
+ * An implementation of the model object '<em><b>Local Operation</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link it.unibo.madz.mobile.androidL.impl.ServiceInterfaceImpl#getName <em>Name</em>}</li>
- *   <li>{@link it.unibo.madz.mobile.androidL.impl.ServiceInterfaceImpl#getOperation <em>Operation</em>}</li>
+ *   <li>{@link it.unibo.madz.mobile.androidL.impl.LocalOperationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link it.unibo.madz.mobile.androidL.impl.LocalOperationImpl#getReturn <em>Return</em>}</li>
+ *   <li>{@link it.unibo.madz.mobile.androidL.impl.LocalOperationImpl#getInputType <em>Input Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ServiceInterfaceImpl extends MinimalEObjectImpl.Container implements ServiceInterface
+public class LocalOperationImpl extends MinimalEObjectImpl.Container implements LocalOperation
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -62,21 +60,41 @@ public class ServiceInterfaceImpl extends MinimalEObjectImpl.Container implement
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getOperation() <em>Operation</em>}' containment reference list.
+   * The default value of the '{@link #getReturn() <em>Return</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOperation()
+   * @see #getReturn()
    * @generated
    * @ordered
    */
-  protected EList<LocalOperation> operation;
+  protected static final String RETURN_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getReturn() <em>Return</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getReturn()
+   * @generated
+   * @ordered
+   */
+  protected String return_ = RETURN_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getInputType() <em>Input Type</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getInputType()
+   * @generated
+   * @ordered
+   */
+  protected EList<InputType> inputType;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ServiceInterfaceImpl()
+  protected LocalOperationImpl()
   {
     super();
   }
@@ -89,7 +107,7 @@ public class ServiceInterfaceImpl extends MinimalEObjectImpl.Container implement
   @Override
   protected EClass eStaticClass()
   {
-    return AndroidLPackage.Literals.SERVICE_INTERFACE;
+    return AndroidLPackage.Literals.LOCAL_OPERATION;
   }
 
   /**
@@ -112,7 +130,7 @@ public class ServiceInterfaceImpl extends MinimalEObjectImpl.Container implement
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AndroidLPackage.SERVICE_INTERFACE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroidLPackage.LOCAL_OPERATION__NAME, oldName, name));
   }
 
   /**
@@ -120,13 +138,9 @@ public class ServiceInterfaceImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<LocalOperation> getOperation()
+  public String getReturn()
   {
-    if (operation == null)
-    {
-      operation = new EObjectContainmentEList<LocalOperation>(LocalOperation.class, this, AndroidLPackage.SERVICE_INTERFACE__OPERATION);
-    }
-    return operation;
+    return return_;
   }
 
   /**
@@ -134,15 +148,26 @@ public class ServiceInterfaceImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public void setReturn(String newReturn)
   {
-    switch (featureID)
+    String oldReturn = return_;
+    return_ = newReturn;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroidLPackage.LOCAL_OPERATION__RETURN, oldReturn, return_));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<InputType> getInputType()
+  {
+    if (inputType == null)
     {
-      case AndroidLPackage.SERVICE_INTERFACE__OPERATION:
-        return ((InternalEList<?>)getOperation()).basicRemove(otherEnd, msgs);
+      inputType = new EDataTypeEList<InputType>(InputType.class, this, AndroidLPackage.LOCAL_OPERATION__INPUT_TYPE);
     }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    return inputType;
   }
 
   /**
@@ -155,10 +180,12 @@ public class ServiceInterfaceImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case AndroidLPackage.SERVICE_INTERFACE__NAME:
+      case AndroidLPackage.LOCAL_OPERATION__NAME:
         return getName();
-      case AndroidLPackage.SERVICE_INTERFACE__OPERATION:
-        return getOperation();
+      case AndroidLPackage.LOCAL_OPERATION__RETURN:
+        return getReturn();
+      case AndroidLPackage.LOCAL_OPERATION__INPUT_TYPE:
+        return getInputType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -174,12 +201,15 @@ public class ServiceInterfaceImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case AndroidLPackage.SERVICE_INTERFACE__NAME:
+      case AndroidLPackage.LOCAL_OPERATION__NAME:
         setName((String)newValue);
         return;
-      case AndroidLPackage.SERVICE_INTERFACE__OPERATION:
-        getOperation().clear();
-        getOperation().addAll((Collection<? extends LocalOperation>)newValue);
+      case AndroidLPackage.LOCAL_OPERATION__RETURN:
+        setReturn((String)newValue);
+        return;
+      case AndroidLPackage.LOCAL_OPERATION__INPUT_TYPE:
+        getInputType().clear();
+        getInputType().addAll((Collection<? extends InputType>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -195,11 +225,14 @@ public class ServiceInterfaceImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case AndroidLPackage.SERVICE_INTERFACE__NAME:
+      case AndroidLPackage.LOCAL_OPERATION__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case AndroidLPackage.SERVICE_INTERFACE__OPERATION:
-        getOperation().clear();
+      case AndroidLPackage.LOCAL_OPERATION__RETURN:
+        setReturn(RETURN_EDEFAULT);
+        return;
+      case AndroidLPackage.LOCAL_OPERATION__INPUT_TYPE:
+        getInputType().clear();
         return;
     }
     super.eUnset(featureID);
@@ -215,10 +248,12 @@ public class ServiceInterfaceImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case AndroidLPackage.SERVICE_INTERFACE__NAME:
+      case AndroidLPackage.LOCAL_OPERATION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case AndroidLPackage.SERVICE_INTERFACE__OPERATION:
-        return operation != null && !operation.isEmpty();
+      case AndroidLPackage.LOCAL_OPERATION__RETURN:
+        return RETURN_EDEFAULT == null ? return_ != null : !RETURN_EDEFAULT.equals(return_);
+      case AndroidLPackage.LOCAL_OPERATION__INPUT_TYPE:
+        return inputType != null && !inputType.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -236,8 +271,12 @@ public class ServiceInterfaceImpl extends MinimalEObjectImpl.Container implement
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", return: ");
+    result.append(return_);
+    result.append(", inputType: ");
+    result.append(inputType);
     result.append(')');
     return result.toString();
   }
 
-} //ServiceInterfaceImpl
+} //LocalOperationImpl

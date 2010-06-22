@@ -16,13 +16,19 @@ import it.unibo.madz.mobile.androidL.Component;
 import it.unibo.madz.mobile.androidL.Data;
 import it.unibo.madz.mobile.androidL.ExplicitInteraction;
 import it.unibo.madz.mobile.androidL.ExplicitInteractionActivity;
+import it.unibo.madz.mobile.androidL.ExplicitInteractionService;
+import it.unibo.madz.mobile.androidL.InputType;
 import it.unibo.madz.mobile.androidL.InterAction;
+import it.unibo.madz.mobile.androidL.Launchservice;
 import it.unibo.madz.mobile.androidL.LocalAction;
+import it.unibo.madz.mobile.androidL.LocalOperation;
 import it.unibo.madz.mobile.androidL.Service;
 import it.unibo.madz.mobile.androidL.ServiceInterface;
+import it.unibo.madz.mobile.androidL.UseService;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -56,6 +62,13 @@ public class AndroidLPackageImpl extends EPackageImpl implements AndroidLPackage
    * @generated
    */
   private EClass serviceInterfaceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass localOperationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -104,6 +117,27 @@ public class AndroidLPackageImpl extends EPackageImpl implements AndroidLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass explicitInteractionServiceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass useServiceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass launchserviceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass actionOnlyInteractionEClass = null;
 
   /**
@@ -126,6 +160,13 @@ public class AndroidLPackageImpl extends EPackageImpl implements AndroidLPackage
    * @generated
    */
   private EClass applicationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum inputTypeEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -295,6 +336,56 @@ public class AndroidLPackageImpl extends EPackageImpl implements AndroidLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getServiceInterface_Operation()
+  {
+    return (EReference)serviceInterfaceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLocalOperation()
+  {
+    return localOperationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLocalOperation_Name()
+  {
+    return (EAttribute)localOperationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLocalOperation_Return()
+  {
+    return (EAttribute)localOperationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLocalOperation_InputType()
+  {
+    return (EAttribute)localOperationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getService()
   {
     return serviceEClass;
@@ -308,6 +399,16 @@ public class AndroidLPackageImpl extends EPackageImpl implements AndroidLPackage
   public EReference getService_Interface()
   {
     return (EReference)serviceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getService_ServiceInteraction()
+  {
+    return (EReference)serviceEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -438,6 +539,76 @@ public class AndroidLPackageImpl extends EPackageImpl implements AndroidLPackage
   public EReference getExplicitInteractionActivity_Action()
   {
     return (EReference)explicitInteractionActivityEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExplicitInteractionService()
+  {
+    return explicitInteractionServiceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getUseService()
+  {
+    return useServiceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getUseService_Dest()
+  {
+    return (EReference)useServiceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getUseService_Operation()
+  {
+    return (EReference)useServiceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getUseService_Arg()
+  {
+    return (EAttribute)useServiceEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLaunchservice()
+  {
+    return launchserviceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLaunchservice_Dest()
+  {
+    return (EReference)launchserviceEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -645,6 +816,16 @@ public class AndroidLPackageImpl extends EPackageImpl implements AndroidLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EEnum getInputType()
+  {
+    return inputTypeEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public AndroidLFactory getAndroidLFactory()
   {
     return (AndroidLFactory)getEFactoryInstance();
@@ -682,9 +863,16 @@ public class AndroidLPackageImpl extends EPackageImpl implements AndroidLPackage
 
     serviceInterfaceEClass = createEClass(SERVICE_INTERFACE);
     createEAttribute(serviceInterfaceEClass, SERVICE_INTERFACE__NAME);
+    createEReference(serviceInterfaceEClass, SERVICE_INTERFACE__OPERATION);
+
+    localOperationEClass = createEClass(LOCAL_OPERATION);
+    createEAttribute(localOperationEClass, LOCAL_OPERATION__NAME);
+    createEAttribute(localOperationEClass, LOCAL_OPERATION__RETURN);
+    createEAttribute(localOperationEClass, LOCAL_OPERATION__INPUT_TYPE);
 
     serviceEClass = createEClass(SERVICE);
     createEReference(serviceEClass, SERVICE__INTERFACE);
+    createEReference(serviceEClass, SERVICE__SERVICE_INTERACTION);
 
     activityEClass = createEClass(ACTIVITY);
     createEAttribute(activityEClass, ACTIVITY__LAUNCHABLE);
@@ -703,6 +891,16 @@ public class AndroidLPackageImpl extends EPackageImpl implements AndroidLPackage
     explicitInteractionActivityEClass = createEClass(EXPLICIT_INTERACTION_ACTIVITY);
     createEReference(explicitInteractionActivityEClass, EXPLICIT_INTERACTION_ACTIVITY__DEST);
     createEReference(explicitInteractionActivityEClass, EXPLICIT_INTERACTION_ACTIVITY__ACTION);
+
+    explicitInteractionServiceEClass = createEClass(EXPLICIT_INTERACTION_SERVICE);
+
+    useServiceEClass = createEClass(USE_SERVICE);
+    createEReference(useServiceEClass, USE_SERVICE__DEST);
+    createEReference(useServiceEClass, USE_SERVICE__OPERATION);
+    createEAttribute(useServiceEClass, USE_SERVICE__ARG);
+
+    launchserviceEClass = createEClass(LAUNCHSERVICE);
+    createEReference(launchserviceEClass, LAUNCHSERVICE__DEST);
 
     actionOnlyInteractionEClass = createEClass(ACTION_ONLY_INTERACTION);
     createEReference(actionOnlyInteractionEClass, ACTION_ONLY_INTERACTION__ACTION);
@@ -727,6 +925,9 @@ public class AndroidLPackageImpl extends EPackageImpl implements AndroidLPackage
     createEReference(applicationEClass, APPLICATION__MAIN_ACTIVITY);
     createEAttribute(applicationEClass, APPLICATION__TARGET);
     createEAttribute(applicationEClass, APPLICATION__PATH);
+
+    // Create enums
+    inputTypeEEnum = createEEnum(INPUT_TYPE);
   }
 
   /**
@@ -762,6 +963,9 @@ public class AndroidLPackageImpl extends EPackageImpl implements AndroidLPackage
     activityEClass.getESuperTypes().add(this.getComponent());
     explicitInteractionEClass.getESuperTypes().add(this.getInterAction());
     explicitInteractionActivityEClass.getESuperTypes().add(this.getExplicitInteraction());
+    explicitInteractionServiceEClass.getESuperTypes().add(this.getExplicitInteraction());
+    useServiceEClass.getESuperTypes().add(this.getExplicitInteractionService());
+    launchserviceEClass.getESuperTypes().add(this.getExplicitInteractionService());
     actionOnlyInteractionEClass.getESuperTypes().add(this.getInterAction());
 
     // Initialize classes and features; add operations and parameters
@@ -777,9 +981,16 @@ public class AndroidLPackageImpl extends EPackageImpl implements AndroidLPackage
 
     initEClass(serviceInterfaceEClass, ServiceInterface.class, "ServiceInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getServiceInterface_Name(), ecorePackage.getEString(), "name", null, 0, 1, ServiceInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getServiceInterface_Operation(), this.getLocalOperation(), null, "operation", null, 0, -1, ServiceInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(localOperationEClass, LocalOperation.class, "LocalOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLocalOperation_Name(), ecorePackage.getEString(), "name", null, 0, 1, LocalOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLocalOperation_Return(), ecorePackage.getEString(), "return", null, 0, 1, LocalOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLocalOperation_InputType(), this.getInputType(), "inputType", null, 0, -1, LocalOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getService_Interface(), this.getServiceInterface(), null, "interface", null, 0, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getService_ServiceInteraction(), this.getExplicitInteractionService(), null, "serviceInteraction", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(activityEClass, Activity.class, "Activity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getActivity_Launchable(), ecorePackage.getEBoolean(), "launchable", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -798,6 +1009,16 @@ public class AndroidLPackageImpl extends EPackageImpl implements AndroidLPackage
     initEClass(explicitInteractionActivityEClass, ExplicitInteractionActivity.class, "ExplicitInteractionActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExplicitInteractionActivity_Dest(), this.getActivity(), null, "dest", null, 0, 1, ExplicitInteractionActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExplicitInteractionActivity_Action(), this.getAction(), null, "action", null, 0, 1, ExplicitInteractionActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(explicitInteractionServiceEClass, ExplicitInteractionService.class, "ExplicitInteractionService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(useServiceEClass, UseService.class, "UseService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getUseService_Dest(), this.getServiceInterface(), null, "dest", null, 0, 1, UseService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUseService_Operation(), this.getLocalOperation(), null, "operation", null, 0, 1, UseService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getUseService_Arg(), ecorePackage.getEString(), "arg", null, 0, -1, UseService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(launchserviceEClass, Launchservice.class, "Launchservice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLaunchservice_Dest(), this.getService(), null, "dest", null, 0, 1, Launchservice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionOnlyInteractionEClass, ActionOnlyInteraction.class, "ActionOnlyInteraction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getActionOnlyInteraction_Action(), this.getAction(), null, "action", null, 0, 1, ActionOnlyInteraction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -822,6 +1043,12 @@ public class AndroidLPackageImpl extends EPackageImpl implements AndroidLPackage
     initEReference(getApplication_MainActivity(), this.getActivity(), null, "mainActivity", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getApplication_Target(), ecorePackage.getEInt(), "target", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getApplication_Path(), ecorePackage.getEString(), "path", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    // Initialize enums and add enum literals
+    initEEnum(inputTypeEEnum, InputType.class, "InputType");
+    addEEnumLiteral(inputTypeEEnum, InputType.STRING);
+    addEEnumLiteral(inputTypeEEnum, InputType.INT);
+    addEEnumLiteral(inputTypeEEnum, InputType.DOUBLE);
 
     // Create resource
     createResource(eNS_URI);

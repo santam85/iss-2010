@@ -9,6 +9,11 @@
     editorPluginID="it.unibo.madz.mobile.editor">
   <genPackages prefix="AndroidL" basePackage="it.unibo.madz.mobile" disposableProviderFactory="true"
       ecorePackage="AndroidL.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="AndroidL.ecore#//InputType">
+      <genEnumLiterals ecoreEnumLiteral="AndroidL.ecore#//InputType/String"/>
+      <genEnumLiterals ecoreEnumLiteral="AndroidL.ecore#//InputType/int"/>
+      <genEnumLiterals ecoreEnumLiteral="AndroidL.ecore#//InputType/double"/>
+    </genEnums>
     <genClasses ecoreClass="AndroidL.ecore#//AndroidSystem">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroidL.ecore#//AndroidSystem/data"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroidL.ecore#//AndroidSystem/action"/>
@@ -21,9 +26,16 @@
     </genClasses>
     <genClasses ecoreClass="AndroidL.ecore#//ServiceInterface">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//ServiceInterface/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroidL.ecore#//ServiceInterface/operation"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroidL.ecore#//LocalOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//LocalOperation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//LocalOperation/return"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//LocalOperation/inputType"/>
     </genClasses>
     <genClasses ecoreClass="AndroidL.ecore#//Service">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroidL.ecore#//Service/interface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroidL.ecore#//Service/serviceInteraction"/>
     </genClasses>
     <genClasses ecoreClass="AndroidL.ecore#//Activity">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//Activity/launchable"/>
@@ -41,6 +53,15 @@
     <genClasses ecoreClass="AndroidL.ecore#//ExplicitInteractionActivity">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroidL.ecore#//ExplicitInteractionActivity/dest"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroidL.ecore#//ExplicitInteractionActivity/action"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroidL.ecore#//ExplicitInteractionService"/>
+    <genClasses ecoreClass="AndroidL.ecore#//UseService">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroidL.ecore#//UseService/dest"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroidL.ecore#//UseService/operation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//UseService/arg"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroidL.ecore#//Launchservice">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroidL.ecore#//Launchservice/dest"/>
     </genClasses>
     <genClasses ecoreClass="AndroidL.ecore#//ActionOnlyInteraction">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroidL.ecore#//ActionOnlyInteraction/action"/>

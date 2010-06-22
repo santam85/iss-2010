@@ -5,6 +5,7 @@
  */
 package it.unibo.madz.mobile.androidL;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,6 +16,7 @@ package it.unibo.madz.mobile.androidL;
  * The following features are supported:
  * <ul>
  *   <li>{@link it.unibo.madz.mobile.androidL.Service#getInterface <em>Interface</em>}</li>
+ *   <li>{@link it.unibo.madz.mobile.androidL.Service#getServiceInteraction <em>Service Interaction</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,5 +51,21 @@ public interface Service extends Component
    * @generated
    */
   void setInterface(ServiceInterface value);
+
+  /**
+   * Returns the value of the '<em><b>Service Interaction</b></em>' containment reference list.
+   * The list contents are of type {@link it.unibo.madz.mobile.androidL.ExplicitInteractionService}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Service Interaction</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Service Interaction</em>' containment reference list.
+   * @see it.unibo.madz.mobile.androidL.AndroidLPackage#getService_ServiceInteraction()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ExplicitInteractionService> getServiceInteraction();
 
 } // Service

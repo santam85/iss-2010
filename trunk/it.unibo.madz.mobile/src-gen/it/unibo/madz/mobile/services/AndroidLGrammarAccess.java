@@ -98,18 +98,20 @@ public class AndroidLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cServiceInterfaceKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cOperationAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cOperationLocalOperationParserRuleCall_2_0 = (RuleCall)cOperationAssignment_2.eContents().get(0);
 		
 		////------------------------------------------- 
 		//// Service Interface
 		////------------------------------------------- 
 		//ServiceInterface:
-		//	"ServiceInterface" name=ID;
+		//	"serviceInterface" name=ID operation+=LocalOperation*;
 		public ParserRule getRule() { return rule; }
 
-		//"ServiceInterface" name=ID
+		//"serviceInterface" name=ID operation+=LocalOperation*
 		public Group getGroup() { return cGroup; }
 
-		//"ServiceInterface"
+		//"serviceInterface"
 		public Keyword getServiceInterfaceKeyword_0() { return cServiceInterfaceKeyword_0; }
 
 		//name=ID
@@ -117,6 +119,68 @@ public class AndroidLGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//operation+=LocalOperation*
+		public Assignment getOperationAssignment_2() { return cOperationAssignment_2; }
+
+		//LocalOperation
+		public RuleCall getOperationLocalOperationParserRuleCall_2_0() { return cOperationLocalOperationParserRuleCall_2_0; }
+	}
+
+	public class LocalOperationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LocalOperation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cOpKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cReturnKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cReturnAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cReturnSTRINGTerminalRuleCall_3_0 = (RuleCall)cReturnAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cInputTypeKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cInputTypeAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cInputTypeInputTypeEnumRuleCall_4_1_0 = (RuleCall)cInputTypeAssignment_4_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
+		
+		//LocalOperation:
+		//	"op" name=ID "return" return=STRING ("inputType" inputType+=InputType ";")*;
+		public ParserRule getRule() { return rule; }
+
+		//"op" name=ID "return" return=STRING ("inputType" inputType+=InputType ";")*
+		public Group getGroup() { return cGroup; }
+
+		//"op"
+		public Keyword getOpKeyword_0() { return cOpKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//"return"
+		public Keyword getReturnKeyword_2() { return cReturnKeyword_2; }
+
+		//return=STRING
+		public Assignment getReturnAssignment_3() { return cReturnAssignment_3; }
+
+		//STRING
+		public RuleCall getReturnSTRINGTerminalRuleCall_3_0() { return cReturnSTRINGTerminalRuleCall_3_0; }
+
+		//("inputType" inputType+=InputType ";")*
+		public Group getGroup_4() { return cGroup_4; }
+
+		//"inputType"
+		public Keyword getInputTypeKeyword_4_0() { return cInputTypeKeyword_4_0; }
+
+		//inputType+=InputType
+		public Assignment getInputTypeAssignment_4_1() { return cInputTypeAssignment_4_1; }
+
+		//InputType
+		public RuleCall getInputTypeInputTypeEnumRuleCall_4_1_0() { return cInputTypeInputTypeEnumRuleCall_4_1_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_4_2() { return cSemicolonKeyword_4_2; }
 	}
 
 	public class ServiceElements extends AbstractParserRuleElementFinder {
@@ -129,15 +193,17 @@ public class AndroidLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cInterfaceAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final CrossReference cInterfaceServiceInterfaceCrossReference_3_0 = (CrossReference)cInterfaceAssignment_3.eContents().get(0);
 		private final RuleCall cInterfaceServiceInterfaceIDTerminalRuleCall_3_0_1 = (RuleCall)cInterfaceServiceInterfaceCrossReference_3_0.eContents().get(1);
+		private final Assignment cServiceInteractionAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cServiceInteractionExplicitInteractionServiceParserRuleCall_4_0 = (RuleCall)cServiceInteractionAssignment_4.eContents().get(0);
 		
 		////------------------------------------------- 
 		//// Service
 		////------------------------------------------- 
 		//Service:
-		//	"Service" name=ID "implements" interface=[ServiceInterface];
+		//	"Service" name=ID "implements" interface=[ServiceInterface] serviceInteraction+=ExplicitInteractionService*;
 		public ParserRule getRule() { return rule; }
 
-		//"Service" name=ID "implements" interface=[ServiceInterface]
+		//"Service" name=ID "implements" interface=[ServiceInterface] serviceInteraction+=ExplicitInteractionService*
 		public Group getGroup() { return cGroup; }
 
 		//"Service"
@@ -160,6 +226,12 @@ public class AndroidLGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getInterfaceServiceInterfaceIDTerminalRuleCall_3_0_1() { return cInterfaceServiceInterfaceIDTerminalRuleCall_3_0_1; }
+
+		//serviceInteraction+=ExplicitInteractionService*
+		public Assignment getServiceInteractionAssignment_4() { return cServiceInteractionAssignment_4; }
+
+		//ExplicitInteractionService
+		public RuleCall getServiceInteractionExplicitInteractionServiceParserRuleCall_4_0() { return cServiceInteractionExplicitInteractionServiceParserRuleCall_4_0; }
 	}
 
 	public class ActivityElements extends AbstractParserRuleElementFinder {
@@ -301,18 +373,25 @@ public class AndroidLGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class ExplicitInteractionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExplicitInteraction");
-		private final RuleCall cExplicitInteractionActivityParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cExplicitInteractionActivityParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cExplicitInteractionServiceParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		////------------------------------------------- 
 		//// ExplicitInteraction 
 		////------------------------------------------- 
-		////TODO |	ExplicitInteractionService 
 		//ExplicitInteraction:
-		//	ExplicitInteractionActivity;
+		//	ExplicitInteractionActivity | ExplicitInteractionService;
 		public ParserRule getRule() { return rule; }
 
+		//ExplicitInteractionActivity | ExplicitInteractionService
+		public Alternatives getAlternatives() { return cAlternatives; }
+
 		//ExplicitInteractionActivity
-		public RuleCall getExplicitInteractionActivityParserRuleCall() { return cExplicitInteractionActivityParserRuleCall; }
+		public RuleCall getExplicitInteractionActivityParserRuleCall_0() { return cExplicitInteractionActivityParserRuleCall_0; }
+
+		//ExplicitInteractionService
+		public RuleCall getExplicitInteractionServiceParserRuleCall_1() { return cExplicitInteractionServiceParserRuleCall_1; }
 	}
 
 	public class ExplicitInteractionActivityElements extends AbstractParserRuleElementFinder {
@@ -361,6 +440,114 @@ public class AndroidLGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getActionActionIDTerminalRuleCall_2_1_0_1() { return cActionActionIDTerminalRuleCall_2_1_0_1; }
+	}
+
+	public class ExplicitInteractionServiceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExplicitInteractionService");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cUseServiceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cLaunchserviceParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//ExplicitInteractionService:
+		//	UseService | Launchservice;
+		public ParserRule getRule() { return rule; }
+
+		//UseService | Launchservice
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//UseService
+		public RuleCall getUseServiceParserRuleCall_0() { return cUseServiceParserRuleCall_0; }
+
+		//Launchservice
+		public RuleCall getLaunchserviceParserRuleCall_1() { return cLaunchserviceParserRuleCall_1; }
+	}
+
+	public class UseServiceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "UseService");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cUseServiceKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cDestAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cDestServiceInterfaceCrossReference_1_0 = (CrossReference)cDestAssignment_1.eContents().get(0);
+		private final RuleCall cDestServiceInterfaceIDTerminalRuleCall_1_0_1 = (RuleCall)cDestServiceInterfaceCrossReference_1_0.eContents().get(1);
+		private final Keyword cForOpKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cOperationAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cOperationLocalOperationCrossReference_3_0 = (CrossReference)cOperationAssignment_3.eContents().get(0);
+		private final RuleCall cOperationLocalOperationIDTerminalRuleCall_3_0_1 = (RuleCall)cOperationLocalOperationCrossReference_3_0.eContents().get(1);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cArgKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cArgAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cArgSTRINGTerminalRuleCall_4_1_0 = (RuleCall)cArgAssignment_4_1.eContents().get(0);
+		
+		//UseService:
+		//	"useService" dest=[ServiceInterface] "forOp" operation=[LocalOperation] ("arg=" arg+=STRING)*;
+		public ParserRule getRule() { return rule; }
+
+		//"useService" dest=[ServiceInterface] "forOp" operation=[LocalOperation] ("arg=" arg+=STRING)*
+		public Group getGroup() { return cGroup; }
+
+		//"useService"
+		public Keyword getUseServiceKeyword_0() { return cUseServiceKeyword_0; }
+
+		//dest=[ServiceInterface]
+		public Assignment getDestAssignment_1() { return cDestAssignment_1; }
+
+		//[ServiceInterface]
+		public CrossReference getDestServiceInterfaceCrossReference_1_0() { return cDestServiceInterfaceCrossReference_1_0; }
+
+		//ID
+		public RuleCall getDestServiceInterfaceIDTerminalRuleCall_1_0_1() { return cDestServiceInterfaceIDTerminalRuleCall_1_0_1; }
+
+		//"forOp"
+		public Keyword getForOpKeyword_2() { return cForOpKeyword_2; }
+
+		//operation=[LocalOperation]
+		public Assignment getOperationAssignment_3() { return cOperationAssignment_3; }
+
+		//[LocalOperation]
+		public CrossReference getOperationLocalOperationCrossReference_3_0() { return cOperationLocalOperationCrossReference_3_0; }
+
+		//ID
+		public RuleCall getOperationLocalOperationIDTerminalRuleCall_3_0_1() { return cOperationLocalOperationIDTerminalRuleCall_3_0_1; }
+
+		//("arg=" arg+=STRING)*
+		public Group getGroup_4() { return cGroup_4; }
+
+		//"arg="
+		public Keyword getArgKeyword_4_0() { return cArgKeyword_4_0; }
+
+		//arg+=STRING
+		public Assignment getArgAssignment_4_1() { return cArgAssignment_4_1; }
+
+		//STRING
+		public RuleCall getArgSTRINGTerminalRuleCall_4_1_0() { return cArgSTRINGTerminalRuleCall_4_1_0; }
+	}
+
+	public class LaunchserviceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Launchservice");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLaunchServiceKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cDestAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cDestServiceCrossReference_1_0 = (CrossReference)cDestAssignment_1.eContents().get(0);
+		private final RuleCall cDestServiceIDTerminalRuleCall_1_0_1 = (RuleCall)cDestServiceCrossReference_1_0.eContents().get(1);
+		
+		//Launchservice:
+		//	"launchService" dest=[Service];
+		public ParserRule getRule() { return rule; }
+
+		//"launchService" dest=[Service]
+		public Group getGroup() { return cGroup; }
+
+		//"launchService"
+		public Keyword getLaunchServiceKeyword_0() { return cLaunchServiceKeyword_0; }
+
+		//dest=[Service]
+		public Assignment getDestAssignment_1() { return cDestAssignment_1; }
+
+		//[Service]
+		public CrossReference getDestServiceCrossReference_1_0() { return cDestServiceCrossReference_1_0; }
+
+		//ID
+		public RuleCall getDestServiceIDTerminalRuleCall_1_0_1() { return cDestServiceIDTerminalRuleCall_1_0_1; }
 	}
 
 	public class ActionOnlyInteractionElements extends AbstractParserRuleElementFinder {
@@ -687,15 +874,56 @@ public class AndroidLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
+	public class InputTypeElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "InputType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cStringEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cStringStringKeyword_0_0 = (Keyword)cStringEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cIntEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cIntIntKeyword_1_0 = (Keyword)cIntEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cDoubleEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cDoubleDoubleKeyword_2_0 = (Keyword)cDoubleEnumLiteralDeclaration_2.eContents().get(0);
+		
+		//enum InputType:
+		//	String | int | double;
+		public EnumRule getRule() { return rule; }
+
+		//String | int | double
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//String
+		public EnumLiteralDeclaration getStringEnumLiteralDeclaration_0() { return cStringEnumLiteralDeclaration_0; }
+
+		//"String"
+		public Keyword getStringStringKeyword_0_0() { return cStringStringKeyword_0_0; }
+
+		//int
+		public EnumLiteralDeclaration getIntEnumLiteralDeclaration_1() { return cIntEnumLiteralDeclaration_1; }
+
+		//"int"
+		public Keyword getIntIntKeyword_1_0() { return cIntIntKeyword_1_0; }
+
+		//double
+		public EnumLiteralDeclaration getDoubleEnumLiteralDeclaration_2() { return cDoubleEnumLiteralDeclaration_2; }
+
+		//"double"
+		public Keyword getDoubleDoubleKeyword_2_0() { return cDoubleDoubleKeyword_2_0; }
+	}
+	
 	private AndroidSystemElements pAndroidSystem;
 	private ComponentElements pComponent;
 	private ServiceInterfaceElements pServiceInterface;
+	private LocalOperationElements pLocalOperation;
+	private InputTypeElements unknownRuleInputType;
 	private ServiceElements pService;
 	private ActivityElements pActivity;
 	private LocalActionElements pLocalAction;
 	private InterActionElements pInterAction;
 	private ExplicitInteractionElements pExplicitInteraction;
 	private ExplicitInteractionActivityElements pExplicitInteractionActivity;
+	private ExplicitInteractionServiceElements pExplicitInteractionService;
+	private UseServiceElements pUseService;
+	private LaunchserviceElements pLaunchservice;
 	private ActionOnlyInteractionElements pActionOnlyInteraction;
 	private ActionElements pAction;
 	private DataElements pData;
@@ -751,7 +979,7 @@ public class AndroidLGrammarAccess extends AbstractGrammarElementFinder {
 	//// Service Interface
 	////------------------------------------------- 
 	//ServiceInterface:
-	//	"ServiceInterface" name=ID;
+	//	"serviceInterface" name=ID operation+=LocalOperation*;
 	public ServiceInterfaceElements getServiceInterfaceAccess() {
 		return (pServiceInterface != null) ? pServiceInterface : (pServiceInterface = new ServiceInterfaceElements());
 	}
@@ -760,11 +988,31 @@ public class AndroidLGrammarAccess extends AbstractGrammarElementFinder {
 		return getServiceInterfaceAccess().getRule();
 	}
 
+	//LocalOperation:
+	//	"op" name=ID "return" return=STRING ("inputType" inputType+=InputType ";")*;
+	public LocalOperationElements getLocalOperationAccess() {
+		return (pLocalOperation != null) ? pLocalOperation : (pLocalOperation = new LocalOperationElements());
+	}
+	
+	public ParserRule getLocalOperationRule() {
+		return getLocalOperationAccess().getRule();
+	}
+
+	//enum InputType:
+	//	String | int | double;
+	public InputTypeElements getInputTypeAccess() {
+		return (unknownRuleInputType != null) ? unknownRuleInputType : (unknownRuleInputType = new InputTypeElements());
+	}
+	
+	public EnumRule getInputTypeRule() {
+		return getInputTypeAccess().getRule();
+	}
+
 	////------------------------------------------- 
 	//// Service
 	////------------------------------------------- 
 	//Service:
-	//	"Service" name=ID "implements" interface=[ServiceInterface];
+	//	"Service" name=ID "implements" interface=[ServiceInterface] serviceInteraction+=ExplicitInteractionService*;
 	public ServiceElements getServiceAccess() {
 		return (pService != null) ? pService : (pService = new ServiceElements());
 	}
@@ -815,9 +1063,8 @@ public class AndroidLGrammarAccess extends AbstractGrammarElementFinder {
 	////------------------------------------------- 
 	//// ExplicitInteraction 
 	////------------------------------------------- 
-	////TODO |	ExplicitInteractionService 
 	//ExplicitInteraction:
-	//	ExplicitInteractionActivity;
+	//	ExplicitInteractionActivity | ExplicitInteractionService;
 	public ExplicitInteractionElements getExplicitInteractionAccess() {
 		return (pExplicitInteraction != null) ? pExplicitInteraction : (pExplicitInteraction = new ExplicitInteractionElements());
 	}
@@ -834,6 +1081,36 @@ public class AndroidLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getExplicitInteractionActivityRule() {
 		return getExplicitInteractionActivityAccess().getRule();
+	}
+
+	//ExplicitInteractionService:
+	//	UseService | Launchservice;
+	public ExplicitInteractionServiceElements getExplicitInteractionServiceAccess() {
+		return (pExplicitInteractionService != null) ? pExplicitInteractionService : (pExplicitInteractionService = new ExplicitInteractionServiceElements());
+	}
+	
+	public ParserRule getExplicitInteractionServiceRule() {
+		return getExplicitInteractionServiceAccess().getRule();
+	}
+
+	//UseService:
+	//	"useService" dest=[ServiceInterface] "forOp" operation=[LocalOperation] ("arg=" arg+=STRING)*;
+	public UseServiceElements getUseServiceAccess() {
+		return (pUseService != null) ? pUseService : (pUseService = new UseServiceElements());
+	}
+	
+	public ParserRule getUseServiceRule() {
+		return getUseServiceAccess().getRule();
+	}
+
+	//Launchservice:
+	//	"launchService" dest=[Service];
+	public LaunchserviceElements getLaunchserviceAccess() {
+		return (pLaunchservice != null) ? pLaunchservice : (pLaunchservice = new LaunchserviceElements());
+	}
+	
+	public ParserRule getLaunchserviceRule() {
+		return getLaunchserviceAccess().getRule();
 	}
 
 	//ActionOnlyInteraction:

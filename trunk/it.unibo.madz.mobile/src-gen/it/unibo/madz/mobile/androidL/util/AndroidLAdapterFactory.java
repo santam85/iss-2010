@@ -93,6 +93,11 @@ public class AndroidLAdapterFactory extends AdapterFactoryImpl
         return createServiceInterfaceAdapter();
       }
       @Override
+      public Adapter caseLocalOperation(LocalOperation object)
+      {
+        return createLocalOperationAdapter();
+      }
+      @Override
       public Adapter caseService(Service object)
       {
         return createServiceAdapter();
@@ -121,6 +126,21 @@ public class AndroidLAdapterFactory extends AdapterFactoryImpl
       public Adapter caseExplicitInteractionActivity(ExplicitInteractionActivity object)
       {
         return createExplicitInteractionActivityAdapter();
+      }
+      @Override
+      public Adapter caseExplicitInteractionService(ExplicitInteractionService object)
+      {
+        return createExplicitInteractionServiceAdapter();
+      }
+      @Override
+      public Adapter caseUseService(UseService object)
+      {
+        return createUseServiceAdapter();
+      }
+      @Override
+      public Adapter caseLaunchservice(Launchservice object)
+      {
+        return createLaunchserviceAdapter();
       }
       @Override
       public Adapter caseActionOnlyInteraction(ActionOnlyInteraction object)
@@ -205,6 +225,21 @@ public class AndroidLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createServiceInterfaceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link it.unibo.madz.mobile.androidL.LocalOperation <em>Local Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see it.unibo.madz.mobile.androidL.LocalOperation
+   * @generated
+   */
+  public Adapter createLocalOperationAdapter()
   {
     return null;
   }
@@ -295,6 +330,51 @@ public class AndroidLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExplicitInteractionActivityAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link it.unibo.madz.mobile.androidL.ExplicitInteractionService <em>Explicit Interaction Service</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see it.unibo.madz.mobile.androidL.ExplicitInteractionService
+   * @generated
+   */
+  public Adapter createExplicitInteractionServiceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link it.unibo.madz.mobile.androidL.UseService <em>Use Service</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see it.unibo.madz.mobile.androidL.UseService
+   * @generated
+   */
+  public Adapter createUseServiceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link it.unibo.madz.mobile.androidL.Launchservice <em>Launchservice</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see it.unibo.madz.mobile.androidL.Launchservice
+   * @generated
+   */
+  public Adapter createLaunchserviceAdapter()
   {
     return null;
   }

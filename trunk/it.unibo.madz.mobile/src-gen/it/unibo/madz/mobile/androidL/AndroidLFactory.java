@@ -53,6 +53,15 @@ public interface AndroidLFactory extends EFactory
   ServiceInterface createServiceInterface();
 
   /**
+   * Returns a new object of class '<em>Local Operation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Local Operation</em>'.
+   * @generated
+   */
+  LocalOperation createLocalOperation();
+
+  /**
    * Returns a new object of class '<em>Service</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -105,6 +114,33 @@ public interface AndroidLFactory extends EFactory
    * @generated
    */
   ExplicitInteractionActivity createExplicitInteractionActivity();
+
+  /**
+   * Returns a new object of class '<em>Explicit Interaction Service</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Explicit Interaction Service</em>'.
+   * @generated
+   */
+  ExplicitInteractionService createExplicitInteractionService();
+
+  /**
+   * Returns a new object of class '<em>Use Service</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Use Service</em>'.
+   * @generated
+   */
+  UseService createUseService();
+
+  /**
+   * Returns a new object of class '<em>Launchservice</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Launchservice</em>'.
+   * @generated
+   */
+  Launchservice createLaunchservice();
 
   /**
    * Returns a new object of class '<em>Action Only Interaction</em>'.

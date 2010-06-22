@@ -8,6 +8,7 @@ package it.unibo.madz.mobile.androidL.impl;
 import it.unibo.madz.mobile.androidL.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -70,18 +71,56 @@ public class AndroidLFactoryImpl extends EFactoryImpl implements AndroidLFactory
       case AndroidLPackage.ANDROID_SYSTEM: return createAndroidSystem();
       case AndroidLPackage.COMPONENT: return createComponent();
       case AndroidLPackage.SERVICE_INTERFACE: return createServiceInterface();
+      case AndroidLPackage.LOCAL_OPERATION: return createLocalOperation();
       case AndroidLPackage.SERVICE: return createService();
       case AndroidLPackage.ACTIVITY: return createActivity();
       case AndroidLPackage.LOCAL_ACTION: return createLocalAction();
       case AndroidLPackage.INTER_ACTION: return createInterAction();
       case AndroidLPackage.EXPLICIT_INTERACTION: return createExplicitInteraction();
       case AndroidLPackage.EXPLICIT_INTERACTION_ACTIVITY: return createExplicitInteractionActivity();
+      case AndroidLPackage.EXPLICIT_INTERACTION_SERVICE: return createExplicitInteractionService();
+      case AndroidLPackage.USE_SERVICE: return createUseService();
+      case AndroidLPackage.LAUNCHSERVICE: return createLaunchservice();
       case AndroidLPackage.ACTION_ONLY_INTERACTION: return createActionOnlyInteraction();
       case AndroidLPackage.ACTION: return createAction();
       case AndroidLPackage.DATA: return createData();
       case AndroidLPackage.APPLICATION: return createApplication();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case AndroidLPackage.INPUT_TYPE:
+        return createInputTypeFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case AndroidLPackage.INPUT_TYPE:
+        return convertInputTypeToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -116,6 +155,17 @@ public class AndroidLFactoryImpl extends EFactoryImpl implements AndroidLFactory
   {
     ServiceInterfaceImpl serviceInterface = new ServiceInterfaceImpl();
     return serviceInterface;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LocalOperation createLocalOperation()
+  {
+    LocalOperationImpl localOperation = new LocalOperationImpl();
+    return localOperation;
   }
 
   /**
@@ -189,6 +239,39 @@ public class AndroidLFactoryImpl extends EFactoryImpl implements AndroidLFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public ExplicitInteractionService createExplicitInteractionService()
+  {
+    ExplicitInteractionServiceImpl explicitInteractionService = new ExplicitInteractionServiceImpl();
+    return explicitInteractionService;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public UseService createUseService()
+  {
+    UseServiceImpl useService = new UseServiceImpl();
+    return useService;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Launchservice createLaunchservice()
+  {
+    LaunchserviceImpl launchservice = new LaunchserviceImpl();
+    return launchservice;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ActionOnlyInteraction createActionOnlyInteraction()
   {
     ActionOnlyInteractionImpl actionOnlyInteraction = new ActionOnlyInteractionImpl();
@@ -226,6 +309,28 @@ public class AndroidLFactoryImpl extends EFactoryImpl implements AndroidLFactory
   {
     ApplicationImpl application = new ApplicationImpl();
     return application;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InputType createInputTypeFromString(EDataType eDataType, String initialValue)
+  {
+    InputType result = InputType.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertInputTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

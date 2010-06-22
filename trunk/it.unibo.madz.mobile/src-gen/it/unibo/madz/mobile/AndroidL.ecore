@@ -20,9 +20,24 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceInterface">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" upperBound="-1"
+        eType="#//LocalOperation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LocalOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="return" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputType" unique="false"
+        upperBound="-1" eType="#//InputType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="InputType">
+    <eLiterals name="String" literal="String"/>
+    <eLiterals name="int" value="1" literal="int"/>
+    <eLiterals name="double" value="2" literal="double"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Service" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EReference" name="interface" eType="#//ServiceInterface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceInteraction" upperBound="-1"
+        eType="#//ExplicitInteractionService" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//Component">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="launchable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -42,6 +57,16 @@
   <eClassifiers xsi:type="ecore:EClass" name="ExplicitInteractionActivity" eSuperTypes="#//ExplicitInteraction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="dest" eType="#//Activity"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//Action"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExplicitInteractionService" eSuperTypes="#//ExplicitInteraction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UseService" eSuperTypes="#//ExplicitInteractionService">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dest" eType="#//ServiceInterface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" eType="#//LocalOperation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Launchservice" eSuperTypes="#//ExplicitInteractionService">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dest" eType="#//Service"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActionOnlyInteraction" eSuperTypes="#//InterAction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//Action"/>

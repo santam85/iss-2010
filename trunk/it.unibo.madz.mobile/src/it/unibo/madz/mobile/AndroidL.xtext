@@ -19,14 +19,24 @@ Component :
 // Service Interface
 //------------------------------------------- 
 ServiceInterface : 
-	"ServiceInterface" name=ID ;
+	"serviceInterface" name=ID 
+	( operation += LocalOperation )* ;
+	
+LocalOperation : 
+	"op" name=ID 
+	"return" return = STRING 
+	( "inputType" inputType += InputType ";" )* ;
+	
+enum InputType : String | int | double ;
 
 //------------------------------------------- 
 // Service
 //------------------------------------------- 
 Service : 
 	"Service" name=ID 
-	"implements" interface = [ ServiceInterface ] ;
+	"implements" interface = [ ServiceInterface ]
+	( serviceInteraction += ExplicitInteractionService )* ;
+
 
 //------------------------------------------- 
 // Activity 
@@ -55,13 +65,24 @@ InterAction :
 // ExplicitInteraction 
 //------------------------------------------- 
 ExplicitInteraction : 
-	ExplicitInteractionActivity 
-	//TODO |	ExplicitInteractionService 
-	;
+	ExplicitInteractionActivity |
+	ExplicitInteractionService ;
 	
 ExplicitInteractionActivity : 
 	"callActivity" dest = [ Activity ] 
 	( "forActiom" action = [ Action ] )? ;
+	
+ExplicitInteractionService : 
+	UseService | 
+	Launchservice ;
+	
+UseService : 
+	"useService" dest = [ ServiceInterface ] 
+	"forOp" operation = [ LocalOperation ] 
+	( "arg=" arg += STRING	)* ; 
+
+Launchservice : 
+	"launchService" dest = [ Service ] ;
 	
 ActionOnlyInteraction : 
 	"execAction" action = [ Action ] ;

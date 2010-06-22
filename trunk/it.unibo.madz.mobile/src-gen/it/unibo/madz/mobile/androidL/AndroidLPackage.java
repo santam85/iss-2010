@@ -7,6 +7,7 @@ package it.unibo.madz.mobile.androidL;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -171,13 +172,68 @@ public interface AndroidLPackage extends EPackage
   int SERVICE_INTERFACE__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Operation</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERVICE_INTERFACE__OPERATION = 1;
+
+  /**
    * The number of structural features of the '<em>Service Interface</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SERVICE_INTERFACE_FEATURE_COUNT = 1;
+  int SERVICE_INTERFACE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link it.unibo.madz.mobile.androidL.impl.LocalOperationImpl <em>Local Operation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see it.unibo.madz.mobile.androidL.impl.LocalOperationImpl
+   * @see it.unibo.madz.mobile.androidL.impl.AndroidLPackageImpl#getLocalOperation()
+   * @generated
+   */
+  int LOCAL_OPERATION = 3;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOCAL_OPERATION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Return</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOCAL_OPERATION__RETURN = 1;
+
+  /**
+   * The feature id for the '<em><b>Input Type</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOCAL_OPERATION__INPUT_TYPE = 2;
+
+  /**
+   * The number of structural features of the '<em>Local Operation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOCAL_OPERATION_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link it.unibo.madz.mobile.androidL.impl.ServiceImpl <em>Service</em>}' class.
@@ -187,7 +243,7 @@ public interface AndroidLPackage extends EPackage
    * @see it.unibo.madz.mobile.androidL.impl.AndroidLPackageImpl#getService()
    * @generated
    */
-  int SERVICE = 3;
+  int SERVICE = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -208,13 +264,22 @@ public interface AndroidLPackage extends EPackage
   int SERVICE__INTERFACE = COMPONENT_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Service Interaction</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERVICE__SERVICE_INTERACTION = COMPONENT_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Service</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SERVICE_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 1;
+  int SERVICE_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link it.unibo.madz.mobile.androidL.impl.ActivityImpl <em>Activity</em>}' class.
@@ -224,7 +289,7 @@ public interface AndroidLPackage extends EPackage
    * @see it.unibo.madz.mobile.androidL.impl.AndroidLPackageImpl#getActivity()
    * @generated
    */
-  int ACTIVITY = 4;
+  int ACTIVITY = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -279,7 +344,7 @@ public interface AndroidLPackage extends EPackage
    * @see it.unibo.madz.mobile.androidL.impl.AndroidLPackageImpl#getLocalAction()
    * @generated
    */
-  int LOCAL_ACTION = 5;
+  int LOCAL_ACTION = 6;
 
   /**
    * The feature id for the '<em><b>Action</b></em>' reference.
@@ -316,7 +381,7 @@ public interface AndroidLPackage extends EPackage
    * @see it.unibo.madz.mobile.androidL.impl.AndroidLPackageImpl#getInterAction()
    * @generated
    */
-  int INTER_ACTION = 6;
+  int INTER_ACTION = 7;
 
   /**
    * The feature id for the '<em><b>Button</b></em>' attribute.
@@ -344,7 +409,7 @@ public interface AndroidLPackage extends EPackage
    * @see it.unibo.madz.mobile.androidL.impl.AndroidLPackageImpl#getExplicitInteraction()
    * @generated
    */
-  int EXPLICIT_INTERACTION = 7;
+  int EXPLICIT_INTERACTION = 8;
 
   /**
    * The feature id for the '<em><b>Button</b></em>' attribute.
@@ -372,7 +437,7 @@ public interface AndroidLPackage extends EPackage
    * @see it.unibo.madz.mobile.androidL.impl.AndroidLPackageImpl#getExplicitInteractionActivity()
    * @generated
    */
-  int EXPLICIT_INTERACTION_ACTIVITY = 8;
+  int EXPLICIT_INTERACTION_ACTIVITY = 9;
 
   /**
    * The feature id for the '<em><b>Button</b></em>' attribute.
@@ -411,6 +476,126 @@ public interface AndroidLPackage extends EPackage
   int EXPLICIT_INTERACTION_ACTIVITY_FEATURE_COUNT = EXPLICIT_INTERACTION_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link it.unibo.madz.mobile.androidL.impl.ExplicitInteractionServiceImpl <em>Explicit Interaction Service</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see it.unibo.madz.mobile.androidL.impl.ExplicitInteractionServiceImpl
+   * @see it.unibo.madz.mobile.androidL.impl.AndroidLPackageImpl#getExplicitInteractionService()
+   * @generated
+   */
+  int EXPLICIT_INTERACTION_SERVICE = 10;
+
+  /**
+   * The feature id for the '<em><b>Button</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPLICIT_INTERACTION_SERVICE__BUTTON = EXPLICIT_INTERACTION__BUTTON;
+
+  /**
+   * The number of structural features of the '<em>Explicit Interaction Service</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPLICIT_INTERACTION_SERVICE_FEATURE_COUNT = EXPLICIT_INTERACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link it.unibo.madz.mobile.androidL.impl.UseServiceImpl <em>Use Service</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see it.unibo.madz.mobile.androidL.impl.UseServiceImpl
+   * @see it.unibo.madz.mobile.androidL.impl.AndroidLPackageImpl#getUseService()
+   * @generated
+   */
+  int USE_SERVICE = 11;
+
+  /**
+   * The feature id for the '<em><b>Button</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int USE_SERVICE__BUTTON = EXPLICIT_INTERACTION_SERVICE__BUTTON;
+
+  /**
+   * The feature id for the '<em><b>Dest</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int USE_SERVICE__DEST = EXPLICIT_INTERACTION_SERVICE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Operation</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int USE_SERVICE__OPERATION = EXPLICIT_INTERACTION_SERVICE_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Arg</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int USE_SERVICE__ARG = EXPLICIT_INTERACTION_SERVICE_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Use Service</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int USE_SERVICE_FEATURE_COUNT = EXPLICIT_INTERACTION_SERVICE_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link it.unibo.madz.mobile.androidL.impl.LaunchserviceImpl <em>Launchservice</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see it.unibo.madz.mobile.androidL.impl.LaunchserviceImpl
+   * @see it.unibo.madz.mobile.androidL.impl.AndroidLPackageImpl#getLaunchservice()
+   * @generated
+   */
+  int LAUNCHSERVICE = 12;
+
+  /**
+   * The feature id for the '<em><b>Button</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAUNCHSERVICE__BUTTON = EXPLICIT_INTERACTION_SERVICE__BUTTON;
+
+  /**
+   * The feature id for the '<em><b>Dest</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAUNCHSERVICE__DEST = EXPLICIT_INTERACTION_SERVICE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Launchservice</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAUNCHSERVICE_FEATURE_COUNT = EXPLICIT_INTERACTION_SERVICE_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link it.unibo.madz.mobile.androidL.impl.ActionOnlyInteractionImpl <em>Action Only Interaction</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -418,7 +603,7 @@ public interface AndroidLPackage extends EPackage
    * @see it.unibo.madz.mobile.androidL.impl.AndroidLPackageImpl#getActionOnlyInteraction()
    * @generated
    */
-  int ACTION_ONLY_INTERACTION = 9;
+  int ACTION_ONLY_INTERACTION = 13;
 
   /**
    * The feature id for the '<em><b>Button</b></em>' attribute.
@@ -455,7 +640,7 @@ public interface AndroidLPackage extends EPackage
    * @see it.unibo.madz.mobile.androidL.impl.AndroidLPackageImpl#getAction()
    * @generated
    */
-  int ACTION = 10;
+  int ACTION = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -501,7 +686,7 @@ public interface AndroidLPackage extends EPackage
    * @see it.unibo.madz.mobile.androidL.impl.AndroidLPackageImpl#getData()
    * @generated
    */
-  int DATA = 11;
+  int DATA = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -565,7 +750,7 @@ public interface AndroidLPackage extends EPackage
    * @see it.unibo.madz.mobile.androidL.impl.AndroidLPackageImpl#getApplication()
    * @generated
    */
-  int APPLICATION = 12;
+  int APPLICATION = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -638,6 +823,16 @@ public interface AndroidLPackage extends EPackage
    * @ordered
    */
   int APPLICATION_FEATURE_COUNT = 7;
+
+  /**
+   * The meta object id for the '{@link it.unibo.madz.mobile.androidL.InputType <em>Input Type</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see it.unibo.madz.mobile.androidL.InputType
+   * @see it.unibo.madz.mobile.androidL.impl.AndroidLPackageImpl#getInputType()
+   * @generated
+   */
+  int INPUT_TYPE = 17;
 
 
   /**
@@ -748,6 +943,60 @@ public interface AndroidLPackage extends EPackage
   EAttribute getServiceInterface_Name();
 
   /**
+   * Returns the meta object for the containment reference list '{@link it.unibo.madz.mobile.androidL.ServiceInterface#getOperation <em>Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Operation</em>'.
+   * @see it.unibo.madz.mobile.androidL.ServiceInterface#getOperation()
+   * @see #getServiceInterface()
+   * @generated
+   */
+  EReference getServiceInterface_Operation();
+
+  /**
+   * Returns the meta object for class '{@link it.unibo.madz.mobile.androidL.LocalOperation <em>Local Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Local Operation</em>'.
+   * @see it.unibo.madz.mobile.androidL.LocalOperation
+   * @generated
+   */
+  EClass getLocalOperation();
+
+  /**
+   * Returns the meta object for the attribute '{@link it.unibo.madz.mobile.androidL.LocalOperation#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see it.unibo.madz.mobile.androidL.LocalOperation#getName()
+   * @see #getLocalOperation()
+   * @generated
+   */
+  EAttribute getLocalOperation_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link it.unibo.madz.mobile.androidL.LocalOperation#getReturn <em>Return</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Return</em>'.
+   * @see it.unibo.madz.mobile.androidL.LocalOperation#getReturn()
+   * @see #getLocalOperation()
+   * @generated
+   */
+  EAttribute getLocalOperation_Return();
+
+  /**
+   * Returns the meta object for the attribute list '{@link it.unibo.madz.mobile.androidL.LocalOperation#getInputType <em>Input Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Input Type</em>'.
+   * @see it.unibo.madz.mobile.androidL.LocalOperation#getInputType()
+   * @see #getLocalOperation()
+   * @generated
+   */
+  EAttribute getLocalOperation_InputType();
+
+  /**
    * Returns the meta object for class '{@link it.unibo.madz.mobile.androidL.Service <em>Service</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -767,6 +1016,17 @@ public interface AndroidLPackage extends EPackage
    * @generated
    */
   EReference getService_Interface();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link it.unibo.madz.mobile.androidL.Service#getServiceInteraction <em>Service Interaction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Service Interaction</em>'.
+   * @see it.unibo.madz.mobile.androidL.Service#getServiceInteraction()
+   * @see #getService()
+   * @generated
+   */
+  EReference getService_ServiceInteraction();
 
   /**
    * Returns the meta object for class '{@link it.unibo.madz.mobile.androidL.Activity <em>Activity</em>}'.
@@ -905,6 +1165,80 @@ public interface AndroidLPackage extends EPackage
    * @generated
    */
   EReference getExplicitInteractionActivity_Action();
+
+  /**
+   * Returns the meta object for class '{@link it.unibo.madz.mobile.androidL.ExplicitInteractionService <em>Explicit Interaction Service</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Explicit Interaction Service</em>'.
+   * @see it.unibo.madz.mobile.androidL.ExplicitInteractionService
+   * @generated
+   */
+  EClass getExplicitInteractionService();
+
+  /**
+   * Returns the meta object for class '{@link it.unibo.madz.mobile.androidL.UseService <em>Use Service</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Use Service</em>'.
+   * @see it.unibo.madz.mobile.androidL.UseService
+   * @generated
+   */
+  EClass getUseService();
+
+  /**
+   * Returns the meta object for the reference '{@link it.unibo.madz.mobile.androidL.UseService#getDest <em>Dest</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Dest</em>'.
+   * @see it.unibo.madz.mobile.androidL.UseService#getDest()
+   * @see #getUseService()
+   * @generated
+   */
+  EReference getUseService_Dest();
+
+  /**
+   * Returns the meta object for the reference '{@link it.unibo.madz.mobile.androidL.UseService#getOperation <em>Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Operation</em>'.
+   * @see it.unibo.madz.mobile.androidL.UseService#getOperation()
+   * @see #getUseService()
+   * @generated
+   */
+  EReference getUseService_Operation();
+
+  /**
+   * Returns the meta object for the attribute list '{@link it.unibo.madz.mobile.androidL.UseService#getArg <em>Arg</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Arg</em>'.
+   * @see it.unibo.madz.mobile.androidL.UseService#getArg()
+   * @see #getUseService()
+   * @generated
+   */
+  EAttribute getUseService_Arg();
+
+  /**
+   * Returns the meta object for class '{@link it.unibo.madz.mobile.androidL.Launchservice <em>Launchservice</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Launchservice</em>'.
+   * @see it.unibo.madz.mobile.androidL.Launchservice
+   * @generated
+   */
+  EClass getLaunchservice();
+
+  /**
+   * Returns the meta object for the reference '{@link it.unibo.madz.mobile.androidL.Launchservice#getDest <em>Dest</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Dest</em>'.
+   * @see it.unibo.madz.mobile.androidL.Launchservice#getDest()
+   * @see #getLaunchservice()
+   * @generated
+   */
+  EReference getLaunchservice_Dest();
 
   /**
    * Returns the meta object for class '{@link it.unibo.madz.mobile.androidL.ActionOnlyInteraction <em>Action Only Interaction</em>}'.
@@ -1123,6 +1457,16 @@ public interface AndroidLPackage extends EPackage
   EAttribute getApplication_Path();
 
   /**
+   * Returns the meta object for enum '{@link it.unibo.madz.mobile.androidL.InputType <em>Input Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Input Type</em>'.
+   * @see it.unibo.madz.mobile.androidL.InputType
+   * @generated
+   */
+  EEnum getInputType();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1232,6 +1576,48 @@ public interface AndroidLPackage extends EPackage
     EAttribute SERVICE_INTERFACE__NAME = eINSTANCE.getServiceInterface_Name();
 
     /**
+     * The meta object literal for the '<em><b>Operation</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SERVICE_INTERFACE__OPERATION = eINSTANCE.getServiceInterface_Operation();
+
+    /**
+     * The meta object literal for the '{@link it.unibo.madz.mobile.androidL.impl.LocalOperationImpl <em>Local Operation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see it.unibo.madz.mobile.androidL.impl.LocalOperationImpl
+     * @see it.unibo.madz.mobile.androidL.impl.AndroidLPackageImpl#getLocalOperation()
+     * @generated
+     */
+    EClass LOCAL_OPERATION = eINSTANCE.getLocalOperation();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LOCAL_OPERATION__NAME = eINSTANCE.getLocalOperation_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Return</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LOCAL_OPERATION__RETURN = eINSTANCE.getLocalOperation_Return();
+
+    /**
+     * The meta object literal for the '<em><b>Input Type</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LOCAL_OPERATION__INPUT_TYPE = eINSTANCE.getLocalOperation_InputType();
+
+    /**
      * The meta object literal for the '{@link it.unibo.madz.mobile.androidL.impl.ServiceImpl <em>Service</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1248,6 +1634,14 @@ public interface AndroidLPackage extends EPackage
      * @generated
      */
     EReference SERVICE__INTERFACE = eINSTANCE.getService_Interface();
+
+    /**
+     * The meta object literal for the '<em><b>Service Interaction</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SERVICE__SERVICE_INTERACTION = eINSTANCE.getService_ServiceInteraction();
 
     /**
      * The meta object literal for the '{@link it.unibo.madz.mobile.androidL.impl.ActivityImpl <em>Activity</em>}' class.
@@ -1362,6 +1756,68 @@ public interface AndroidLPackage extends EPackage
      * @generated
      */
     EReference EXPLICIT_INTERACTION_ACTIVITY__ACTION = eINSTANCE.getExplicitInteractionActivity_Action();
+
+    /**
+     * The meta object literal for the '{@link it.unibo.madz.mobile.androidL.impl.ExplicitInteractionServiceImpl <em>Explicit Interaction Service</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see it.unibo.madz.mobile.androidL.impl.ExplicitInteractionServiceImpl
+     * @see it.unibo.madz.mobile.androidL.impl.AndroidLPackageImpl#getExplicitInteractionService()
+     * @generated
+     */
+    EClass EXPLICIT_INTERACTION_SERVICE = eINSTANCE.getExplicitInteractionService();
+
+    /**
+     * The meta object literal for the '{@link it.unibo.madz.mobile.androidL.impl.UseServiceImpl <em>Use Service</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see it.unibo.madz.mobile.androidL.impl.UseServiceImpl
+     * @see it.unibo.madz.mobile.androidL.impl.AndroidLPackageImpl#getUseService()
+     * @generated
+     */
+    EClass USE_SERVICE = eINSTANCE.getUseService();
+
+    /**
+     * The meta object literal for the '<em><b>Dest</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference USE_SERVICE__DEST = eINSTANCE.getUseService_Dest();
+
+    /**
+     * The meta object literal for the '<em><b>Operation</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference USE_SERVICE__OPERATION = eINSTANCE.getUseService_Operation();
+
+    /**
+     * The meta object literal for the '<em><b>Arg</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute USE_SERVICE__ARG = eINSTANCE.getUseService_Arg();
+
+    /**
+     * The meta object literal for the '{@link it.unibo.madz.mobile.androidL.impl.LaunchserviceImpl <em>Launchservice</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see it.unibo.madz.mobile.androidL.impl.LaunchserviceImpl
+     * @see it.unibo.madz.mobile.androidL.impl.AndroidLPackageImpl#getLaunchservice()
+     * @generated
+     */
+    EClass LAUNCHSERVICE = eINSTANCE.getLaunchservice();
+
+    /**
+     * The meta object literal for the '<em><b>Dest</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LAUNCHSERVICE__DEST = eINSTANCE.getLaunchservice_Dest();
 
     /**
      * The meta object literal for the '{@link it.unibo.madz.mobile.androidL.impl.ActionOnlyInteractionImpl <em>Action Only Interaction</em>}' class.
@@ -1530,6 +1986,16 @@ public interface AndroidLPackage extends EPackage
      * @generated
      */
     EAttribute APPLICATION__PATH = eINSTANCE.getApplication_Path();
+
+    /**
+     * The meta object literal for the '{@link it.unibo.madz.mobile.androidL.InputType <em>Input Type</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see it.unibo.madz.mobile.androidL.InputType
+     * @see it.unibo.madz.mobile.androidL.impl.AndroidLPackageImpl#getInputType()
+     * @generated
+     */
+    EEnum INPUT_TYPE = eINSTANCE.getInputType();
 
   }
 

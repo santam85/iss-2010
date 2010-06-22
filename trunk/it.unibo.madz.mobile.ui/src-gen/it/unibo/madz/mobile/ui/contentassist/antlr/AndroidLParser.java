@@ -39,9 +39,14 @@ public class AndroidLParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getComponentAccess().getAlternatives(), "rule__Component__Alternatives");
 					put(grammarAccess.getInterActionAccess().getAlternatives(), "rule__InterAction__Alternatives");
+					put(grammarAccess.getExplicitInteractionAccess().getAlternatives(), "rule__ExplicitInteraction__Alternatives");
+					put(grammarAccess.getExplicitInteractionServiceAccess().getAlternatives(), "rule__ExplicitInteractionService__Alternatives");
 					put(grammarAccess.getRestUriAccess().getAlternatives(), "rule__RestUri__Alternatives");
+					put(grammarAccess.getInputTypeAccess().getAlternatives(), "rule__InputType__Alternatives");
 					put(grammarAccess.getAndroidSystemAccess().getGroup(), "rule__AndroidSystem__Group__0");
 					put(grammarAccess.getServiceInterfaceAccess().getGroup(), "rule__ServiceInterface__Group__0");
+					put(grammarAccess.getLocalOperationAccess().getGroup(), "rule__LocalOperation__Group__0");
+					put(grammarAccess.getLocalOperationAccess().getGroup_4(), "rule__LocalOperation__Group_4__0");
 					put(grammarAccess.getServiceAccess().getGroup(), "rule__Service__Group__0");
 					put(grammarAccess.getActivityAccess().getGroup(), "rule__Activity__Group__0");
 					put(grammarAccess.getLocalActionAccess().getGroup(), "rule__LocalAction__Group__0");
@@ -49,6 +54,9 @@ public class AndroidLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInterActionAccess().getGroup_1(), "rule__InterAction__Group_1__0");
 					put(grammarAccess.getExplicitInteractionActivityAccess().getGroup(), "rule__ExplicitInteractionActivity__Group__0");
 					put(grammarAccess.getExplicitInteractionActivityAccess().getGroup_2(), "rule__ExplicitInteractionActivity__Group_2__0");
+					put(grammarAccess.getUseServiceAccess().getGroup(), "rule__UseService__Group__0");
+					put(grammarAccess.getUseServiceAccess().getGroup_4(), "rule__UseService__Group_4__0");
+					put(grammarAccess.getLaunchserviceAccess().getGroup(), "rule__Launchservice__Group__0");
 					put(grammarAccess.getActionOnlyInteractionAccess().getGroup(), "rule__ActionOnlyInteraction__Group__0");
 					put(grammarAccess.getActionAccess().getGroup(), "rule__Action__Group__0");
 					put(grammarAccess.getDataAccess().getGroup(), "rule__Data__Group__0");
@@ -64,8 +72,13 @@ public class AndroidLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAndroidSystemAccess().getComponentAssignment_3(), "rule__AndroidSystem__ComponentAssignment_3");
 					put(grammarAccess.getAndroidSystemAccess().getApplicationAssignment_4(), "rule__AndroidSystem__ApplicationAssignment_4");
 					put(grammarAccess.getServiceInterfaceAccess().getNameAssignment_1(), "rule__ServiceInterface__NameAssignment_1");
+					put(grammarAccess.getServiceInterfaceAccess().getOperationAssignment_2(), "rule__ServiceInterface__OperationAssignment_2");
+					put(grammarAccess.getLocalOperationAccess().getNameAssignment_1(), "rule__LocalOperation__NameAssignment_1");
+					put(grammarAccess.getLocalOperationAccess().getReturnAssignment_3(), "rule__LocalOperation__ReturnAssignment_3");
+					put(grammarAccess.getLocalOperationAccess().getInputTypeAssignment_4_1(), "rule__LocalOperation__InputTypeAssignment_4_1");
 					put(grammarAccess.getServiceAccess().getNameAssignment_1(), "rule__Service__NameAssignment_1");
 					put(grammarAccess.getServiceAccess().getInterfaceAssignment_3(), "rule__Service__InterfaceAssignment_3");
+					put(grammarAccess.getServiceAccess().getServiceInteractionAssignment_4(), "rule__Service__ServiceInteractionAssignment_4");
 					put(grammarAccess.getActivityAccess().getNameAssignment_1(), "rule__Activity__NameAssignment_1");
 					put(grammarAccess.getActivityAccess().getLaunchableAssignment_2(), "rule__Activity__LaunchableAssignment_2");
 					put(grammarAccess.getActivityAccess().getActionsAssignment_3(), "rule__Activity__ActionsAssignment_3");
@@ -76,6 +89,10 @@ public class AndroidLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInterActionAccess().getButtonAssignment_1_1(), "rule__InterAction__ButtonAssignment_1_1");
 					put(grammarAccess.getExplicitInteractionActivityAccess().getDestAssignment_1(), "rule__ExplicitInteractionActivity__DestAssignment_1");
 					put(grammarAccess.getExplicitInteractionActivityAccess().getActionAssignment_2_1(), "rule__ExplicitInteractionActivity__ActionAssignment_2_1");
+					put(grammarAccess.getUseServiceAccess().getDestAssignment_1(), "rule__UseService__DestAssignment_1");
+					put(grammarAccess.getUseServiceAccess().getOperationAssignment_3(), "rule__UseService__OperationAssignment_3");
+					put(grammarAccess.getUseServiceAccess().getArgAssignment_4_1(), "rule__UseService__ArgAssignment_4_1");
+					put(grammarAccess.getLaunchserviceAccess().getDestAssignment_1(), "rule__Launchservice__DestAssignment_1");
 					put(grammarAccess.getActionOnlyInteractionAccess().getActionAssignment_1(), "rule__ActionOnlyInteraction__ActionAssignment_1");
 					put(grammarAccess.getActionAccess().getNameAssignment_1(), "rule__Action__NameAssignment_1");
 					put(grammarAccess.getActionAccess().getDataAssignment_3(), "rule__Action__DataAssignment_3");
