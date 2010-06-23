@@ -1,4 +1,4 @@
-import it::unibo::madz::mobile::androidL;
+import AndroidL::androidL;
 
-String pToD( String packageName ) :
-	packageName.replaceAll( "\\." , "/") ;
+sortedGreetings(Model this) :
+	this.greetings.sortBy(g|g.name.toLowerCase());
