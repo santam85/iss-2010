@@ -770,9 +770,11 @@ rule__AndroidSystem__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getAndroidSystemAccess().getDataAssignment_0()); }
-(rule__AndroidSystem__DataAssignment_0)*
-{ after(grammarAccess.getAndroidSystemAccess().getDataAssignment_0()); }
+{ before(grammarAccess.getAndroidSystemAccess().getAndroidSystemKeyword_0()); }
+
+	'AndroidSystem' 
+
+{ after(grammarAccess.getAndroidSystemAccess().getAndroidSystemKeyword_0()); }
 )
 
 ;
@@ -799,9 +801,9 @@ rule__AndroidSystem__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getAndroidSystemAccess().getActionAssignment_1()); }
-(rule__AndroidSystem__ActionAssignment_1)*
-{ after(grammarAccess.getAndroidSystemAccess().getActionAssignment_1()); }
+{ before(grammarAccess.getAndroidSystemAccess().getNameAssignment_1()); }
+(rule__AndroidSystem__NameAssignment_1)
+{ after(grammarAccess.getAndroidSystemAccess().getNameAssignment_1()); }
 )
 
 ;
@@ -828,9 +830,9 @@ rule__AndroidSystem__Group__2__Impl
     }
 :
 (
-{ before(grammarAccess.getAndroidSystemAccess().getServiceInterfaceAssignment_2()); }
-(rule__AndroidSystem__ServiceInterfaceAssignment_2)*
-{ after(grammarAccess.getAndroidSystemAccess().getServiceInterfaceAssignment_2()); }
+{ before(grammarAccess.getAndroidSystemAccess().getDataAssignment_2()); }
+(rule__AndroidSystem__DataAssignment_2)*
+{ after(grammarAccess.getAndroidSystemAccess().getDataAssignment_2()); }
 )
 
 ;
@@ -857,9 +859,9 @@ rule__AndroidSystem__Group__3__Impl
     }
 :
 (
-{ before(grammarAccess.getAndroidSystemAccess().getComponentAssignment_3()); }
-(rule__AndroidSystem__ComponentAssignment_3)*
-{ after(grammarAccess.getAndroidSystemAccess().getComponentAssignment_3()); }
+{ before(grammarAccess.getAndroidSystemAccess().getActionAssignment_3()); }
+(rule__AndroidSystem__ActionAssignment_3)*
+{ after(grammarAccess.getAndroidSystemAccess().getActionAssignment_3()); }
 )
 
 ;
@@ -874,6 +876,7 @@ rule__AndroidSystem__Group__4
     }
 :
 	rule__AndroidSystem__Group__4__Impl
+	rule__AndroidSystem__Group__5
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -885,15 +888,76 @@ rule__AndroidSystem__Group__4__Impl
     }
 :
 (
-{ before(grammarAccess.getAndroidSystemAccess().getApplicationAssignment_4()); }
-(rule__AndroidSystem__ApplicationAssignment_4)
-{ after(grammarAccess.getAndroidSystemAccess().getApplicationAssignment_4()); }
+{ before(grammarAccess.getAndroidSystemAccess().getServiceInterfaceAssignment_4()); }
+(rule__AndroidSystem__ServiceInterfaceAssignment_4)*
+{ after(grammarAccess.getAndroidSystemAccess().getServiceInterfaceAssignment_4()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__AndroidSystem__Group__5
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__AndroidSystem__Group__5__Impl
+	rule__AndroidSystem__Group__6
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__AndroidSystem__Group__5__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getAndroidSystemAccess().getComponentAssignment_5()); }
+(rule__AndroidSystem__ComponentAssignment_5)*
+{ after(grammarAccess.getAndroidSystemAccess().getComponentAssignment_5()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__AndroidSystem__Group__6
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__AndroidSystem__Group__6__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__AndroidSystem__Group__6__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getAndroidSystemAccess().getApplicationAssignment_6()); }
+(rule__AndroidSystem__ApplicationAssignment_6)
+{ after(grammarAccess.getAndroidSystemAccess().getApplicationAssignment_6()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
 
 
 
@@ -3460,14 +3524,14 @@ finally {
 
 
 
-rule__AndroidSystem__DataAssignment_0
+rule__AndroidSystem__NameAssignment_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getAndroidSystemAccess().getDataDataParserRuleCall_0_0()); }
-	ruleData{ after(grammarAccess.getAndroidSystemAccess().getDataDataParserRuleCall_0_0()); }
+{ before(grammarAccess.getAndroidSystemAccess().getNameIDTerminalRuleCall_1_0()); }
+	RULE_ID{ after(grammarAccess.getAndroidSystemAccess().getNameIDTerminalRuleCall_1_0()); }
 )
 
 ;
@@ -3475,14 +3539,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__AndroidSystem__ActionAssignment_1
+rule__AndroidSystem__DataAssignment_2
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getAndroidSystemAccess().getActionActionParserRuleCall_1_0()); }
-	ruleAction{ after(grammarAccess.getAndroidSystemAccess().getActionActionParserRuleCall_1_0()); }
+{ before(grammarAccess.getAndroidSystemAccess().getDataDataParserRuleCall_2_0()); }
+	ruleData{ after(grammarAccess.getAndroidSystemAccess().getDataDataParserRuleCall_2_0()); }
 )
 
 ;
@@ -3490,14 +3554,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__AndroidSystem__ServiceInterfaceAssignment_2
+rule__AndroidSystem__ActionAssignment_3
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getAndroidSystemAccess().getServiceInterfaceServiceInterfaceParserRuleCall_2_0()); }
-	ruleServiceInterface{ after(grammarAccess.getAndroidSystemAccess().getServiceInterfaceServiceInterfaceParserRuleCall_2_0()); }
+{ before(grammarAccess.getAndroidSystemAccess().getActionActionParserRuleCall_3_0()); }
+	ruleAction{ after(grammarAccess.getAndroidSystemAccess().getActionActionParserRuleCall_3_0()); }
 )
 
 ;
@@ -3505,14 +3569,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__AndroidSystem__ComponentAssignment_3
+rule__AndroidSystem__ServiceInterfaceAssignment_4
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getAndroidSystemAccess().getComponentComponentParserRuleCall_3_0()); }
-	ruleComponent{ after(grammarAccess.getAndroidSystemAccess().getComponentComponentParserRuleCall_3_0()); }
+{ before(grammarAccess.getAndroidSystemAccess().getServiceInterfaceServiceInterfaceParserRuleCall_4_0()); }
+	ruleServiceInterface{ after(grammarAccess.getAndroidSystemAccess().getServiceInterfaceServiceInterfaceParserRuleCall_4_0()); }
 )
 
 ;
@@ -3520,14 +3584,29 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__AndroidSystem__ApplicationAssignment_4
+rule__AndroidSystem__ComponentAssignment_5
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getAndroidSystemAccess().getApplicationApplicationParserRuleCall_4_0()); }
-	ruleApplication{ after(grammarAccess.getAndroidSystemAccess().getApplicationApplicationParserRuleCall_4_0()); }
+{ before(grammarAccess.getAndroidSystemAccess().getComponentComponentParserRuleCall_5_0()); }
+	ruleComponent{ after(grammarAccess.getAndroidSystemAccess().getComponentComponentParserRuleCall_5_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__AndroidSystem__ApplicationAssignment_6
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getAndroidSystemAccess().getApplicationApplicationParserRuleCall_6_0()); }
+	ruleApplication{ after(grammarAccess.getAndroidSystemAccess().getApplicationApplicationParserRuleCall_6_0()); }
 )
 
 ;

@@ -66,11 +66,12 @@ public class AndroidLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getApplicationAccess().getGroup(), "rule__Application__Group__0");
 					put(grammarAccess.getApplicationAccess().getGroup_4(), "rule__Application__Group_4__0");
 					put(grammarAccess.getURIAccess().getGroup(), "rule__URI__Group__0");
-					put(grammarAccess.getAndroidSystemAccess().getDataAssignment_0(), "rule__AndroidSystem__DataAssignment_0");
-					put(grammarAccess.getAndroidSystemAccess().getActionAssignment_1(), "rule__AndroidSystem__ActionAssignment_1");
-					put(grammarAccess.getAndroidSystemAccess().getServiceInterfaceAssignment_2(), "rule__AndroidSystem__ServiceInterfaceAssignment_2");
-					put(grammarAccess.getAndroidSystemAccess().getComponentAssignment_3(), "rule__AndroidSystem__ComponentAssignment_3");
-					put(grammarAccess.getAndroidSystemAccess().getApplicationAssignment_4(), "rule__AndroidSystem__ApplicationAssignment_4");
+					put(grammarAccess.getAndroidSystemAccess().getNameAssignment_1(), "rule__AndroidSystem__NameAssignment_1");
+					put(grammarAccess.getAndroidSystemAccess().getDataAssignment_2(), "rule__AndroidSystem__DataAssignment_2");
+					put(grammarAccess.getAndroidSystemAccess().getActionAssignment_3(), "rule__AndroidSystem__ActionAssignment_3");
+					put(grammarAccess.getAndroidSystemAccess().getServiceInterfaceAssignment_4(), "rule__AndroidSystem__ServiceInterfaceAssignment_4");
+					put(grammarAccess.getAndroidSystemAccess().getComponentAssignment_5(), "rule__AndroidSystem__ComponentAssignment_5");
+					put(grammarAccess.getAndroidSystemAccess().getApplicationAssignment_6(), "rule__AndroidSystem__ApplicationAssignment_6");
 					put(grammarAccess.getServiceInterfaceAccess().getNameAssignment_1(), "rule__ServiceInterface__NameAssignment_1");
 					put(grammarAccess.getServiceInterfaceAccess().getOperationAssignment_2(), "rule__ServiceInterface__OperationAssignment_2");
 					put(grammarAccess.getLocalOperationAccess().getNameAssignment_1(), "rule__LocalOperation__NameAssignment_1");

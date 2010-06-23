@@ -1,6 +1,6 @@
 «IMPORT it::unibo::madz::mobile::androidL»
 
 «EXTENSION templates::Extensions»
-«DEFINE main FOR AndroidSystem» 
-	«EXPAND GenActivityCode::genComponentCode(this) FOREACH this.component.typeSelect(Activity)» 
+«DEFINE main FOR androidL::AndroidSystem» 
+	«EXPAND GenActivityCode::genComponentCode(this) FOREACH this.component.typeSelect(androidL::Activity)» 
 «ENDDEFINE»

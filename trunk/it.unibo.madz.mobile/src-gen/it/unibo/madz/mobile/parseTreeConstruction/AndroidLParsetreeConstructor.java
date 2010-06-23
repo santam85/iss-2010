@@ -57,11 +57,13 @@ protected class ThisRootNode extends RootToken {
 /************ begin Rule AndroidSystem ****************
  *
  * AndroidSystem:
- * 	data+=Data* action+=Action* serviceInterface=ServiceInterface* component+=Component* application=Application;
+ * 	"AndroidSystem" name=ID data+=Data* action+=Action* serviceInterface=ServiceInterface* component+=Component*
+ * 	application=Application;
  *
  **/
 
-// data+=Data* action+=Action* serviceInterface=ServiceInterface* component+=Component* application=Application
+// "AndroidSystem" name=ID data+=Data* action+=Action* serviceInterface=ServiceInterface* component+=Component*
+// application=Application
 protected class AndroidSystem_Group extends GroupToken {
 	
 	public AndroidSystem_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -76,7 +78,7 @@ protected class AndroidSystem_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new AndroidSystem_ApplicationAssignment_4(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new AndroidSystem_ApplicationAssignment_6(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -90,16 +92,71 @@ protected class AndroidSystem_Group extends GroupToken {
 
 }
 
-// data+=Data*
-protected class AndroidSystem_DataAssignment_0 extends AssignmentToken  {
+// "AndroidSystem"
+protected class AndroidSystem_AndroidSystemKeyword_0 extends KeywordToken  {
 	
-	public AndroidSystem_DataAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public AndroidSystem_AndroidSystemKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getAndroidSystemAccess().getAndroidSystemKeyword_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index, inst);
+		}	
+	}
+
+}
+
+// name=ID
+protected class AndroidSystem_NameAssignment_1 extends AssignmentToken  {
+	
+	public AndroidSystem_NameAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getAndroidSystemAccess().getDataAssignment_0();
+		return grammarAccess.getAndroidSystemAccess().getNameAssignment_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new AndroidSystem_AndroidSystemKeyword_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("name",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("name");
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getAndroidSystemAccess().getNameIDTerminalRuleCall_1_0(), value, null)) {
+			type = AssignmentType.TERMINAL_RULE_CALL;
+			element = grammarAccess.getAndroidSystemAccess().getNameIDTerminalRuleCall_1_0();
+			return obj;
+		}
+		return null;
+	}
+
+}
+
+// data+=Data*
+protected class AndroidSystem_DataAssignment_2 extends AssignmentToken  {
+	
+	public AndroidSystem_DataAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getAndroidSystemAccess().getDataAssignment_2();
 	}
 
     @Override
@@ -118,7 +175,7 @@ protected class AndroidSystem_DataAssignment_0 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getDataRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getAndroidSystemAccess().getDataDataParserRuleCall_0_0(); 
+				element = grammarAccess.getAndroidSystemAccess().getDataDataParserRuleCall_2_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -130,22 +187,23 @@ protected class AndroidSystem_DataAssignment_0 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new AndroidSystem_DataAssignment_0(lastRuleCallOrigin, next, actIndex, consumed);
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index - 1, consumed);
+			case 0: return new AndroidSystem_DataAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 1: return new AndroidSystem_NameAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
 		}	
 	}	
 }
 
 // action+=Action*
-protected class AndroidSystem_ActionAssignment_1 extends AssignmentToken  {
+protected class AndroidSystem_ActionAssignment_3 extends AssignmentToken  {
 	
-	public AndroidSystem_ActionAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public AndroidSystem_ActionAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getAndroidSystemAccess().getActionAssignment_1();
+		return grammarAccess.getAndroidSystemAccess().getActionAssignment_3();
 	}
 
     @Override
@@ -164,7 +222,7 @@ protected class AndroidSystem_ActionAssignment_1 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getActionRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getAndroidSystemAccess().getActionActionParserRuleCall_1_0(); 
+				element = grammarAccess.getAndroidSystemAccess().getActionActionParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -176,23 +234,24 @@ protected class AndroidSystem_ActionAssignment_1 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new AndroidSystem_ActionAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
-			case 1: return new AndroidSystem_DataAssignment_0(lastRuleCallOrigin, next, actIndex, consumed);
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index - 2, consumed);
+			case 0: return new AndroidSystem_ActionAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
+			case 1: return new AndroidSystem_DataAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 2: return new AndroidSystem_NameAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
 		}	
 	}	
 }
 
 // serviceInterface=ServiceInterface*
-protected class AndroidSystem_ServiceInterfaceAssignment_2 extends AssignmentToken  {
+protected class AndroidSystem_ServiceInterfaceAssignment_4 extends AssignmentToken  {
 	
-	public AndroidSystem_ServiceInterfaceAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public AndroidSystem_ServiceInterfaceAssignment_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getAndroidSystemAccess().getServiceInterfaceAssignment_2();
+		return grammarAccess.getAndroidSystemAccess().getServiceInterfaceAssignment_4();
 	}
 
     @Override
@@ -211,7 +270,7 @@ protected class AndroidSystem_ServiceInterfaceAssignment_2 extends AssignmentTok
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getServiceInterfaceRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getAndroidSystemAccess().getServiceInterfaceServiceInterfaceParserRuleCall_2_0(); 
+				element = grammarAccess.getAndroidSystemAccess().getServiceInterfaceServiceInterfaceParserRuleCall_4_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -223,24 +282,25 @@ protected class AndroidSystem_ServiceInterfaceAssignment_2 extends AssignmentTok
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new AndroidSystem_ServiceInterfaceAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
-			case 1: return new AndroidSystem_ActionAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
-			case 2: return new AndroidSystem_DataAssignment_0(lastRuleCallOrigin, next, actIndex, consumed);
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index - 3, consumed);
+			case 0: return new AndroidSystem_ServiceInterfaceAssignment_4(lastRuleCallOrigin, next, actIndex, consumed);
+			case 1: return new AndroidSystem_ActionAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
+			case 2: return new AndroidSystem_DataAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 3: return new AndroidSystem_NameAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
 		}	
 	}	
 }
 
 // component+=Component*
-protected class AndroidSystem_ComponentAssignment_3 extends AssignmentToken  {
+protected class AndroidSystem_ComponentAssignment_5 extends AssignmentToken  {
 	
-	public AndroidSystem_ComponentAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public AndroidSystem_ComponentAssignment_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getAndroidSystemAccess().getComponentAssignment_3();
+		return grammarAccess.getAndroidSystemAccess().getComponentAssignment_5();
 	}
 
     @Override
@@ -259,7 +319,7 @@ protected class AndroidSystem_ComponentAssignment_3 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getComponentRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getAndroidSystemAccess().getComponentComponentParserRuleCall_3_0(); 
+				element = grammarAccess.getAndroidSystemAccess().getComponentComponentParserRuleCall_5_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -271,25 +331,26 @@ protected class AndroidSystem_ComponentAssignment_3 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new AndroidSystem_ComponentAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
-			case 1: return new AndroidSystem_ServiceInterfaceAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
-			case 2: return new AndroidSystem_ActionAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
-			case 3: return new AndroidSystem_DataAssignment_0(lastRuleCallOrigin, next, actIndex, consumed);
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index - 4, consumed);
+			case 0: return new AndroidSystem_ComponentAssignment_5(lastRuleCallOrigin, next, actIndex, consumed);
+			case 1: return new AndroidSystem_ServiceInterfaceAssignment_4(lastRuleCallOrigin, next, actIndex, consumed);
+			case 2: return new AndroidSystem_ActionAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
+			case 3: return new AndroidSystem_DataAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 4: return new AndroidSystem_NameAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
 		}	
 	}	
 }
 
 // application=Application
-protected class AndroidSystem_ApplicationAssignment_4 extends AssignmentToken  {
+protected class AndroidSystem_ApplicationAssignment_6 extends AssignmentToken  {
 	
-	public AndroidSystem_ApplicationAssignment_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public AndroidSystem_ApplicationAssignment_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getAndroidSystemAccess().getApplicationAssignment_4();
+		return grammarAccess.getAndroidSystemAccess().getApplicationAssignment_6();
 	}
 
     @Override
@@ -308,7 +369,7 @@ protected class AndroidSystem_ApplicationAssignment_4 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getApplicationRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getAndroidSystemAccess().getApplicationApplicationParserRuleCall_4_0(); 
+				element = grammarAccess.getAndroidSystemAccess().getApplicationApplicationParserRuleCall_6_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -320,11 +381,12 @@ protected class AndroidSystem_ApplicationAssignment_4 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new AndroidSystem_ComponentAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
-			case 1: return new AndroidSystem_ServiceInterfaceAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
-			case 2: return new AndroidSystem_ActionAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
-			case 3: return new AndroidSystem_DataAssignment_0(lastRuleCallOrigin, next, actIndex, consumed);
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index - 4, consumed);
+			case 0: return new AndroidSystem_ComponentAssignment_5(lastRuleCallOrigin, next, actIndex, consumed);
+			case 1: return new AndroidSystem_ServiceInterfaceAssignment_4(lastRuleCallOrigin, next, actIndex, consumed);
+			case 2: return new AndroidSystem_ActionAssignment_3(lastRuleCallOrigin, next, actIndex, consumed);
+			case 3: return new AndroidSystem_DataAssignment_2(lastRuleCallOrigin, next, actIndex, consumed);
+			case 4: return new AndroidSystem_NameAssignment_1(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
 		}	
 	}	
 }

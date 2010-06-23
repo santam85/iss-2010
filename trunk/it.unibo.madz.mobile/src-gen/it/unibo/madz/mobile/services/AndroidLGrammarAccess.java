@@ -20,53 +20,67 @@ public class AndroidLGrammarAccess extends AbstractGrammarElementFinder {
 	public class AndroidSystemElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AndroidSystem");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cDataAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cDataDataParserRuleCall_0_0 = (RuleCall)cDataAssignment_0.eContents().get(0);
-		private final Assignment cActionAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cActionActionParserRuleCall_1_0 = (RuleCall)cActionAssignment_1.eContents().get(0);
-		private final Assignment cServiceInterfaceAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cServiceInterfaceServiceInterfaceParserRuleCall_2_0 = (RuleCall)cServiceInterfaceAssignment_2.eContents().get(0);
-		private final Assignment cComponentAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cComponentComponentParserRuleCall_3_0 = (RuleCall)cComponentAssignment_3.eContents().get(0);
-		private final Assignment cApplicationAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cApplicationApplicationParserRuleCall_4_0 = (RuleCall)cApplicationAssignment_4.eContents().get(0);
+		private final Keyword cAndroidSystemKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cDataAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cDataDataParserRuleCall_2_0 = (RuleCall)cDataAssignment_2.eContents().get(0);
+		private final Assignment cActionAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cActionActionParserRuleCall_3_0 = (RuleCall)cActionAssignment_3.eContents().get(0);
+		private final Assignment cServiceInterfaceAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cServiceInterfaceServiceInterfaceParserRuleCall_4_0 = (RuleCall)cServiceInterfaceAssignment_4.eContents().get(0);
+		private final Assignment cComponentAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cComponentComponentParserRuleCall_5_0 = (RuleCall)cComponentAssignment_5.eContents().get(0);
+		private final Assignment cApplicationAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cApplicationApplicationParserRuleCall_6_0 = (RuleCall)cApplicationAssignment_6.eContents().get(0);
 		
 		//AndroidSystem:
-		//	data+=Data* action+=Action* serviceInterface=ServiceInterface* component+=Component* application=Application;
+		//	"AndroidSystem" name=ID data+=Data* action+=Action* serviceInterface=ServiceInterface* component+=Component*
+		//	application=Application;
 		public ParserRule getRule() { return rule; }
 
-		//data+=Data* action+=Action* serviceInterface=ServiceInterface* component+=Component* application=Application
+		//"AndroidSystem" name=ID data+=Data* action+=Action* serviceInterface=ServiceInterface* component+=Component*
+		//application=Application
 		public Group getGroup() { return cGroup; }
 
+		//"AndroidSystem"
+		public Keyword getAndroidSystemKeyword_0() { return cAndroidSystemKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
 		//data+=Data*
-		public Assignment getDataAssignment_0() { return cDataAssignment_0; }
+		public Assignment getDataAssignment_2() { return cDataAssignment_2; }
 
 		//Data
-		public RuleCall getDataDataParserRuleCall_0_0() { return cDataDataParserRuleCall_0_0; }
+		public RuleCall getDataDataParserRuleCall_2_0() { return cDataDataParserRuleCall_2_0; }
 
 		//action+=Action*
-		public Assignment getActionAssignment_1() { return cActionAssignment_1; }
+		public Assignment getActionAssignment_3() { return cActionAssignment_3; }
 
 		//Action
-		public RuleCall getActionActionParserRuleCall_1_0() { return cActionActionParserRuleCall_1_0; }
+		public RuleCall getActionActionParserRuleCall_3_0() { return cActionActionParserRuleCall_3_0; }
 
 		//serviceInterface=ServiceInterface*
-		public Assignment getServiceInterfaceAssignment_2() { return cServiceInterfaceAssignment_2; }
+		public Assignment getServiceInterfaceAssignment_4() { return cServiceInterfaceAssignment_4; }
 
 		//ServiceInterface
-		public RuleCall getServiceInterfaceServiceInterfaceParserRuleCall_2_0() { return cServiceInterfaceServiceInterfaceParserRuleCall_2_0; }
+		public RuleCall getServiceInterfaceServiceInterfaceParserRuleCall_4_0() { return cServiceInterfaceServiceInterfaceParserRuleCall_4_0; }
 
 		//component+=Component*
-		public Assignment getComponentAssignment_3() { return cComponentAssignment_3; }
+		public Assignment getComponentAssignment_5() { return cComponentAssignment_5; }
 
 		//Component
-		public RuleCall getComponentComponentParserRuleCall_3_0() { return cComponentComponentParserRuleCall_3_0; }
+		public RuleCall getComponentComponentParserRuleCall_5_0() { return cComponentComponentParserRuleCall_5_0; }
 
 		//application=Application
-		public Assignment getApplicationAssignment_4() { return cApplicationAssignment_4; }
+		public Assignment getApplicationAssignment_6() { return cApplicationAssignment_6; }
 
 		//Application
-		public RuleCall getApplicationApplicationParserRuleCall_4_0() { return cApplicationApplicationParserRuleCall_4_0; }
+		public RuleCall getApplicationApplicationParserRuleCall_6_0() { return cApplicationApplicationParserRuleCall_6_0; }
 	}
 
 	public class ComponentElements extends AbstractParserRuleElementFinder {
@@ -953,7 +967,8 @@ public class AndroidLGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//AndroidSystem:
-	//	data+=Data* action+=Action* serviceInterface=ServiceInterface* component+=Component* application=Application;
+	//	"AndroidSystem" name=ID data+=Data* action+=Action* serviceInterface=ServiceInterface* component+=Component*
+	//	application=Application;
 	public AndroidSystemElements getAndroidSystemAccess() {
 		return (pAndroidSystem != null) ? pAndroidSystem : (pAndroidSystem = new AndroidSystemElements());
 	}

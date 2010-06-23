@@ -2,7 +2,8 @@ grammar it.unibo.madz.mobile.AndroidL with org.eclipse.xtext.common.Terminals
 
 generate androidL "http://www.unibo.it/madz/mobile/AndroidL"
 
-AndroidSystem : 
+AndroidSystem :
+	"AndroidSystem" name=ID 
 	(data+=Data)*
 	(action+=Action)*
 	(serviceInterface=ServiceInterface)* 

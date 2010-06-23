@@ -7,60 +7,61 @@ package it.unibo.madz.mobile.parser.antlr.internal;
 import org.eclipse.xtext.parser.antlr.Lexer;
 }
 
-T11 : 'serviceInterface' ;
-T12 : 'op' ;
-T13 : 'return' ;
-T14 : 'inputType' ;
-T15 : ';' ;
-T16 : 'Service' ;
-T17 : 'implements' ;
-T18 : 'Activity' ;
-T19 : 'launchable' ;
-T20 : 'action' ;
-T21 : 'button' ;
-T22 : 'callActivity' ;
-T23 : 'forActiom' ;
-T24 : 'useService' ;
-T25 : 'forOp' ;
-T26 : 'arg=' ;
-T27 : 'launchService' ;
-T28 : 'execAction' ;
-T29 : 'data' ;
-T30 : 'category' ;
-T31 : 'scheme' ;
-T32 : 'host' ;
-T33 : 'port' ;
-T34 : 'path' ;
-T35 : 'Application' ;
-T36 : 'avd' ;
-T37 : 'workdir' ;
-T38 : 'package' ;
-T39 : 'entryActiviy' ;
-T40 : 'target' ;
-T41 : '.' ;
-T42 : 'String' ;
-T43 : 'int' ;
-T44 : 'double' ;
+T11 : 'AndroidSystem' ;
+T12 : 'serviceInterface' ;
+T13 : 'op' ;
+T14 : 'return' ;
+T15 : 'inputType' ;
+T16 : ';' ;
+T17 : 'Service' ;
+T18 : 'implements' ;
+T19 : 'Activity' ;
+T20 : 'launchable' ;
+T21 : 'action' ;
+T22 : 'button' ;
+T23 : 'callActivity' ;
+T24 : 'forActiom' ;
+T25 : 'useService' ;
+T26 : 'forOp' ;
+T27 : 'arg=' ;
+T28 : 'launchService' ;
+T29 : 'execAction' ;
+T30 : 'data' ;
+T31 : 'category' ;
+T32 : 'scheme' ;
+T33 : 'host' ;
+T34 : 'port' ;
+T35 : 'path' ;
+T36 : 'Application' ;
+T37 : 'avd' ;
+T38 : 'workdir' ;
+T39 : 'package' ;
+T40 : 'entryActiviy' ;
+T41 : 'target' ;
+T42 : '.' ;
+T43 : 'String' ;
+T44 : 'int' ;
+T45 : 'double' ;
 
-// $ANTLR src "../it.unibo.madz.mobile/src-gen/it/unibo/madz/mobile/parser/antlr/internal/InternalAndroidL.g" 1704
+// $ANTLR src "../it.unibo.madz.mobile/src-gen/it/unibo/madz/mobile/parser/antlr/internal/InternalAndroidL.g" 1732
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
-// $ANTLR src "../it.unibo.madz.mobile/src-gen/it/unibo/madz/mobile/parser/antlr/internal/InternalAndroidL.g" 1706
+// $ANTLR src "../it.unibo.madz.mobile/src-gen/it/unibo/madz/mobile/parser/antlr/internal/InternalAndroidL.g" 1734
 RULE_INT : ('0'..'9')+;
 
-// $ANTLR src "../it.unibo.madz.mobile/src-gen/it/unibo/madz/mobile/parser/antlr/internal/InternalAndroidL.g" 1708
+// $ANTLR src "../it.unibo.madz.mobile/src-gen/it/unibo/madz/mobile/parser/antlr/internal/InternalAndroidL.g" 1736
 RULE_STRING : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'"'|'\''|'\\')|~(('\\'|'\'')))* '\'');
 
-// $ANTLR src "../it.unibo.madz.mobile/src-gen/it/unibo/madz/mobile/parser/antlr/internal/InternalAndroidL.g" 1710
+// $ANTLR src "../it.unibo.madz.mobile/src-gen/it/unibo/madz/mobile/parser/antlr/internal/InternalAndroidL.g" 1738
 RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
 
-// $ANTLR src "../it.unibo.madz.mobile/src-gen/it/unibo/madz/mobile/parser/antlr/internal/InternalAndroidL.g" 1712
+// $ANTLR src "../it.unibo.madz.mobile/src-gen/it/unibo/madz/mobile/parser/antlr/internal/InternalAndroidL.g" 1740
 RULE_SL_COMMENT : '//' ~(('\n'|'\r'))* ('\r'? '\n')?;
 
-// $ANTLR src "../it.unibo.madz.mobile/src-gen/it/unibo/madz/mobile/parser/antlr/internal/InternalAndroidL.g" 1714
+// $ANTLR src "../it.unibo.madz.mobile/src-gen/it/unibo/madz/mobile/parser/antlr/internal/InternalAndroidL.g" 1742
 RULE_WS : (' '|'\t'|'\r'|'\n')+;
 
-// $ANTLR src "../it.unibo.madz.mobile/src-gen/it/unibo/madz/mobile/parser/antlr/internal/InternalAndroidL.g" 1716
+// $ANTLR src "../it.unibo.madz.mobile/src-gen/it/unibo/madz/mobile/parser/antlr/internal/InternalAndroidL.g" 1744
 RULE_ANY_OTHER : .;
 
 

@@ -1,8 +1,8 @@
-«IMPORT it::unibo::madz::mobile::androidL»
+«IMPORT androidL»;
 
 «EXTENSION templates::Extensions»
 
-«DEFINE genComponentCode(AndroidSystem m) FOR Activity» 
+«DEFINE genComponentCode(androidL::AndroidSystem m) FOR androidL::Activity» 
 	«FILE m.application.name+"/src/"+ pToD( m.application.packageName )+ "/"+this.name+".java"-»
 		package «m.application.packageName»; 
 		«EXPAND genActivityImport»
@@ -28,7 +28,7 @@
 	«ENDFILE» 
 «ENDDEFINE»
 
-«DEFINE genActivityImport FOR Activity-» 
+«DEFINE genActivityImport FOR androidL::Activity-» 
 	import android.content.Intent; 
 	import android.net.Uri; 
 	import android.os.Bundle;
@@ -38,7 +38,7 @@
 	import android.util.Log; 
 «ENDDEFINE»
 
-«DEFINE genActivtyOnCreate FOR Activity-» 
+«DEFINE genActivtyOnCreate FOR androidL::Activity-» 
 @Override
 protected void onCreate(Bundle savedInstanceState) { 
 	super.onCreate(savedInstanceState);
@@ -47,7 +47,7 @@ protected void onCreate(Bundle savedInstanceState) {
 	/* ---------------------------------- 
 	* Create user cmd buttons * 
 	*/ ----------------------------------
-	«EXPAND GenButtonCode::genCmdButton FOREACH this.actions.select(e|e.button)» 
+	«EXPAND genCmdButton FOREACH this.actions.select(e|e.button)» 
 	/* ---------------------------------- 
 	* Look at input and work * 
 	*/ ----------------------------------
@@ -56,7 +56,7 @@ protected void onCreate(Bundle savedInstanceState) {
 }//onCreate
 «ENDDEFINE»
 
-«DEFINE genCmdButton FOR LocalAction-» 
+«DEFINE genCmdButton FOR androidL::LocalAction» 
 	Button «this.action.name»Button = (Button) findViewById(R.id.«this.action.name»); 
 	«this.action.name»Button.setOnClickListener(new OnClickListener() { 
 		@Override
@@ -66,13 +66,13 @@ protected void onCreate(Bundle savedInstanceState) {
 	}); 
 «ENDDEFINE»
 
-«DEFINE genUserCmdAction FOR LocalAction» 
+«DEFINE genUserCmdAction FOR androidL::LocalAction-» 
 	protected void do«this.action.name»() { 
 		println("executing command ... " + "«this.action.name»" ); 
 	} 
 «ENDDEFINE»
 
-«DEFINE genInput FOR Activity-» 
+«DEFINE genInput FOR androidL::Activity-» 
 	//Find the activity input in order to decide what to do
 	protected void lookAtInput() {
 		Intent sourceIntent = getIntent(); 

@@ -71,13 +71,22 @@ public interface AndroidLPackage extends EPackage
   int ANDROID_SYSTEM = 0;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANDROID_SYSTEM__NAME = 0;
+
+  /**
    * The feature id for the '<em><b>Data</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ANDROID_SYSTEM__DATA = 0;
+  int ANDROID_SYSTEM__DATA = 1;
 
   /**
    * The feature id for the '<em><b>Action</b></em>' containment reference list.
@@ -86,7 +95,7 @@ public interface AndroidLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDROID_SYSTEM__ACTION = 1;
+  int ANDROID_SYSTEM__ACTION = 2;
 
   /**
    * The feature id for the '<em><b>Service Interface</b></em>' containment reference.
@@ -95,7 +104,7 @@ public interface AndroidLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDROID_SYSTEM__SERVICE_INTERFACE = 2;
+  int ANDROID_SYSTEM__SERVICE_INTERFACE = 3;
 
   /**
    * The feature id for the '<em><b>Component</b></em>' containment reference list.
@@ -104,7 +113,7 @@ public interface AndroidLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDROID_SYSTEM__COMPONENT = 3;
+  int ANDROID_SYSTEM__COMPONENT = 4;
 
   /**
    * The feature id for the '<em><b>Application</b></em>' containment reference.
@@ -113,7 +122,7 @@ public interface AndroidLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDROID_SYSTEM__APPLICATION = 4;
+  int ANDROID_SYSTEM__APPLICATION = 5;
 
   /**
    * The number of structural features of the '<em>Android System</em>' class.
@@ -122,7 +131,7 @@ public interface AndroidLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANDROID_SYSTEM_FEATURE_COUNT = 5;
+  int ANDROID_SYSTEM_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link it.unibo.madz.mobile.androidL.impl.ComponentImpl <em>Component</em>}' class.
@@ -846,6 +855,17 @@ public interface AndroidLPackage extends EPackage
   EClass getAndroidSystem();
 
   /**
+   * Returns the meta object for the attribute '{@link it.unibo.madz.mobile.androidL.AndroidSystem#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see it.unibo.madz.mobile.androidL.AndroidSystem#getName()
+   * @see #getAndroidSystem()
+   * @generated
+   */
+  EAttribute getAndroidSystem_Name();
+
+  /**
    * Returns the meta object for the containment reference list '{@link it.unibo.madz.mobile.androidL.AndroidSystem#getData <em>Data</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1498,6 +1518,14 @@ public interface AndroidLPackage extends EPackage
      * @generated
      */
     EClass ANDROID_SYSTEM = eINSTANCE.getAndroidSystem();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ANDROID_SYSTEM__NAME = eINSTANCE.getAndroidSystem_Name();
 
     /**
      * The meta object literal for the '<em><b>Data</b></em>' containment reference list feature.

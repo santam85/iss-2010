@@ -4,6 +4,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="androidL"
     nsURI="http://www.unibo.it/madz/mobile/AndroidL" nsPrefix="androidL">
   <eClassifiers xsi:type="ecore:EClass" name="AndroidSystem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//Data"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="action" upperBound="-1"

@@ -90,12 +90,40 @@ ruleAndroidSystem returns [EObject current=null]
     @after { resetLookahead(); 
     	lastConsumedNode = currentNode;
     }:
-((
+(	'AndroidSystem' 
+    {
+        createLeafNode(grammarAccess.getAndroidSystemAccess().getAndroidSystemKeyword_0(), null); 
+    }
+(
+(
+		lv_name_1_0=RULE_ID
+		{
+			createLeafNode(grammarAccess.getAndroidSystemAccess().getNameIDTerminalRuleCall_1_0(), "name"); 
+		}
+		{
+	        if ($current==null) {
+	            $current = factory.create(grammarAccess.getAndroidSystemRule().getType().getClassifier());
+	            associateNodeWithAstElement(currentNode, $current);
+	        }
+	        try {
+	       		set(
+	       			$current, 
+	       			"name",
+	        		lv_name_1_0, 
+	        		"ID", 
+	        		lastConsumedNode);
+	        } catch (ValueConverterException vce) {
+				handleValueConverterException(vce);
+	        }
+	    }
+
+)
+)(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getAndroidSystemAccess().getDataDataParserRuleCall_0_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getAndroidSystemAccess().getDataDataParserRuleCall_2_0(), currentNode); 
 	    }
-		lv_data_0_0=ruleData		{
+		lv_data_2_0=ruleData		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getAndroidSystemRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -104,7 +132,7 @@ ruleAndroidSystem returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"data",
-	        		lv_data_0_0, 
+	        		lv_data_2_0, 
 	        		"Data", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -117,9 +145,9 @@ ruleAndroidSystem returns [EObject current=null]
 )*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getAndroidSystemAccess().getActionActionParserRuleCall_1_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getAndroidSystemAccess().getActionActionParserRuleCall_3_0(), currentNode); 
 	    }
-		lv_action_1_0=ruleAction		{
+		lv_action_3_0=ruleAction		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getAndroidSystemRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -128,7 +156,7 @@ ruleAndroidSystem returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"action",
-	        		lv_action_1_0, 
+	        		lv_action_3_0, 
 	        		"Action", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -141,9 +169,9 @@ ruleAndroidSystem returns [EObject current=null]
 )*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getAndroidSystemAccess().getServiceInterfaceServiceInterfaceParserRuleCall_2_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getAndroidSystemAccess().getServiceInterfaceServiceInterfaceParserRuleCall_4_0(), currentNode); 
 	    }
-		lv_serviceInterface_2_0=ruleServiceInterface		{
+		lv_serviceInterface_4_0=ruleServiceInterface		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getAndroidSystemRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -152,7 +180,7 @@ ruleAndroidSystem returns [EObject current=null]
 	       		set(
 	       			$current, 
 	       			"serviceInterface",
-	        		lv_serviceInterface_2_0, 
+	        		lv_serviceInterface_4_0, 
 	        		"ServiceInterface", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -165,9 +193,9 @@ ruleAndroidSystem returns [EObject current=null]
 )*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getAndroidSystemAccess().getComponentComponentParserRuleCall_3_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getAndroidSystemAccess().getComponentComponentParserRuleCall_5_0(), currentNode); 
 	    }
-		lv_component_3_0=ruleComponent		{
+		lv_component_5_0=ruleComponent		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getAndroidSystemRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -176,7 +204,7 @@ ruleAndroidSystem returns [EObject current=null]
 	       		add(
 	       			$current, 
 	       			"component",
-	        		lv_component_3_0, 
+	        		lv_component_5_0, 
 	        		"Component", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {
@@ -189,9 +217,9 @@ ruleAndroidSystem returns [EObject current=null]
 )*(
 (
 		{ 
-	        currentNode=createCompositeNode(grammarAccess.getAndroidSystemAccess().getApplicationApplicationParserRuleCall_4_0(), currentNode); 
+	        currentNode=createCompositeNode(grammarAccess.getAndroidSystemAccess().getApplicationApplicationParserRuleCall_6_0(), currentNode); 
 	    }
-		lv_application_4_0=ruleApplication		{
+		lv_application_6_0=ruleApplication		{
 	        if ($current==null) {
 	            $current = factory.create(grammarAccess.getAndroidSystemRule().getType().getClassifier());
 	            associateNodeWithAstElement(currentNode.getParent(), $current);
@@ -200,7 +228,7 @@ ruleAndroidSystem returns [EObject current=null]
 	       		set(
 	       			$current, 
 	       			"application",
-	        		lv_application_4_0, 
+	        		lv_application_6_0, 
 	        		"Application", 
 	        		currentNode);
 	        } catch (ValueConverterException vce) {

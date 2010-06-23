@@ -246,9 +246,9 @@ public class AndroidLPackageImpl extends EPackageImpl implements AndroidLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAndroidSystem_Data()
+  public EAttribute getAndroidSystem_Name()
   {
-    return (EReference)androidSystemEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)androidSystemEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -256,7 +256,7 @@ public class AndroidLPackageImpl extends EPackageImpl implements AndroidLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAndroidSystem_Action()
+  public EReference getAndroidSystem_Data()
   {
     return (EReference)androidSystemEClass.getEStructuralFeatures().get(1);
   }
@@ -266,7 +266,7 @@ public class AndroidLPackageImpl extends EPackageImpl implements AndroidLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAndroidSystem_ServiceInterface()
+  public EReference getAndroidSystem_Action()
   {
     return (EReference)androidSystemEClass.getEStructuralFeatures().get(2);
   }
@@ -276,7 +276,7 @@ public class AndroidLPackageImpl extends EPackageImpl implements AndroidLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAndroidSystem_Component()
+  public EReference getAndroidSystem_ServiceInterface()
   {
     return (EReference)androidSystemEClass.getEStructuralFeatures().get(3);
   }
@@ -286,9 +286,19 @@ public class AndroidLPackageImpl extends EPackageImpl implements AndroidLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAndroidSystem_Application()
+  public EReference getAndroidSystem_Component()
   {
     return (EReference)androidSystemEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAndroidSystem_Application()
+  {
+    return (EReference)androidSystemEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -852,6 +862,7 @@ public class AndroidLPackageImpl extends EPackageImpl implements AndroidLPackage
 
     // Create classes and their features
     androidSystemEClass = createEClass(ANDROID_SYSTEM);
+    createEAttribute(androidSystemEClass, ANDROID_SYSTEM__NAME);
     createEReference(androidSystemEClass, ANDROID_SYSTEM__DATA);
     createEReference(androidSystemEClass, ANDROID_SYSTEM__ACTION);
     createEReference(androidSystemEClass, ANDROID_SYSTEM__SERVICE_INTERFACE);
@@ -970,6 +981,7 @@ public class AndroidLPackageImpl extends EPackageImpl implements AndroidLPackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(androidSystemEClass, AndroidSystem.class, "AndroidSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAndroidSystem_Name(), ecorePackage.getEString(), "name", null, 0, 1, AndroidSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAndroidSystem_Data(), this.getData(), null, "data", null, 0, -1, AndroidSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAndroidSystem_Action(), this.getAction(), null, "action", null, 0, -1, AndroidSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAndroidSystem_ServiceInterface(), this.getServiceInterface(), null, "serviceInterface", null, 0, 1, AndroidSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

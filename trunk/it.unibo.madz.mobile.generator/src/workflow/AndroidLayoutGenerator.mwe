@@ -2,7 +2,7 @@
 	<component class="org.eclipse.xpand2.Generator"> 
 		<metaModel class="org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel"/> 
 		<fileEncoding value="Cp1252"/>
-		<expand value="templates::GenAndroidLayout::main FOR model"/> 
+		<expand value="templates::GenAndroidLayout::main FOREACH model"/> 
 		<genPath value="${targetDir}"/> 
 	</component> 
 </workflow>

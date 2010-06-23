@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link it.unibo.madz.mobile.androidL.impl.AndroidSystemImpl#getName <em>Name</em>}</li>
  *   <li>{@link it.unibo.madz.mobile.androidL.impl.AndroidSystemImpl#getData <em>Data</em>}</li>
  *   <li>{@link it.unibo.madz.mobile.androidL.impl.AndroidSystemImpl#getAction <em>Action</em>}</li>
  *   <li>{@link it.unibo.madz.mobile.androidL.impl.AndroidSystemImpl#getServiceInterface <em>Service Interface</em>}</li>
@@ -48,6 +49,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class AndroidSystemImpl extends MinimalEObjectImpl.Container implements AndroidSystem
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getData() <em>Data</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -117,6 +138,29 @@ public class AndroidSystemImpl extends MinimalEObjectImpl.Container implements A
   protected EClass eStaticClass()
   {
     return AndroidLPackage.Literals.ANDROID_SYSTEM;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AndroidLPackage.ANDROID_SYSTEM__NAME, oldName, name));
   }
 
   /**
@@ -291,6 +335,8 @@ public class AndroidSystemImpl extends MinimalEObjectImpl.Container implements A
   {
     switch (featureID)
     {
+      case AndroidLPackage.ANDROID_SYSTEM__NAME:
+        return getName();
       case AndroidLPackage.ANDROID_SYSTEM__DATA:
         return getData();
       case AndroidLPackage.ANDROID_SYSTEM__ACTION:
@@ -316,6 +362,9 @@ public class AndroidSystemImpl extends MinimalEObjectImpl.Container implements A
   {
     switch (featureID)
     {
+      case AndroidLPackage.ANDROID_SYSTEM__NAME:
+        setName((String)newValue);
+        return;
       case AndroidLPackage.ANDROID_SYSTEM__DATA:
         getData().clear();
         getData().addAll((Collection<? extends Data>)newValue);
@@ -348,6 +397,9 @@ public class AndroidSystemImpl extends MinimalEObjectImpl.Container implements A
   {
     switch (featureID)
     {
+      case AndroidLPackage.ANDROID_SYSTEM__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case AndroidLPackage.ANDROID_SYSTEM__DATA:
         getData().clear();
         return;
@@ -377,6 +429,8 @@ public class AndroidSystemImpl extends MinimalEObjectImpl.Container implements A
   {
     switch (featureID)
     {
+      case AndroidLPackage.ANDROID_SYSTEM__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AndroidLPackage.ANDROID_SYSTEM__DATA:
         return data != null && !data.isEmpty();
       case AndroidLPackage.ANDROID_SYSTEM__ACTION:
@@ -389,6 +443,23 @@ public class AndroidSystemImpl extends MinimalEObjectImpl.Container implements A
         return application != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //AndroidSystemImpl

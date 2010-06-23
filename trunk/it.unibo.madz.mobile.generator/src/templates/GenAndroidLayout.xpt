@@ -2,6 +2,6 @@
 
 «EXTENSION templates::Extensions»
 
-«DEFINE main FOR androidL::AndroidSystem-» 
-	«EXPAND GenActivityLayout::genLayout(this) FOREACH this.component.typeSelect(Activity)» 
+«DEFINE main FOR androidL::AndroidSystem» 
+		«EXPAND GenActivityLayout::genLayout(this) FOREACH this.component.typeSelect(androidL::Activity)» 
 «ENDDEFINE»
