@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/it.unibo.madz.mobile/src-gen"
+    editDirectory="/it.unibo.madz.mobile.edit/src" editorDirectory="/it.unibo.madz.mobile.editor/src"
+    modelPluginID="it.unibo.madz.mobile" forceOverwrite="true" modelName="AndroidL"
+    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="it.unibo.madz.mobile.edit"
+    editorPluginID="it.unibo.madz.mobile.editor">
+  <genPackages prefix="AndroidL" basePackage="it.unibo.madz.mobile" disposableProviderFactory="true"
+      ecorePackage="AndroidL.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="AndroidL.ecore#//InputType">
+      <genEnumLiterals ecoreEnumLiteral="AndroidL.ecore#//InputType/String"/>
+      <genEnumLiterals ecoreEnumLiteral="AndroidL.ecore#//InputType/int"/>
+      <genEnumLiterals ecoreEnumLiteral="AndroidL.ecore#//InputType/double"/>
+    </genEnums>
+    <genClasses ecoreClass="AndroidL.ecore#//AndroidSystem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroidL.ecore#//AndroidSystem/data"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroidL.ecore#//AndroidSystem/action"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroidL.ecore#//AndroidSystem/serviceInterface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroidL.ecore#//AndroidSystem/component"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroidL.ecore#//AndroidSystem/application"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroidL.ecore#//Component">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//Component/name"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroidL.ecore#//ServiceInterface">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//ServiceInterface/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroidL.ecore#//ServiceInterface/operation"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroidL.ecore#//LocalOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//LocalOperation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//LocalOperation/return"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//LocalOperation/inputType"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroidL.ecore#//Service">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroidL.ecore#//Service/interface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroidL.ecore#//Service/serviceInteraction"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroidL.ecore#//Activity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//Activity/launchable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroidL.ecore#//Activity/actions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AndroidL.ecore#//Activity/interactions"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroidL.ecore#//LocalAction">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroidL.ecore#//LocalAction/action"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//LocalAction/button"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroidL.ecore#//InterAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//InterAction/button"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroidL.ecore#//ExplicitInteraction"/>
+    <genClasses ecoreClass="AndroidL.ecore#//ExplicitInteractionActivity">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroidL.ecore#//ExplicitInteractionActivity/dest"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroidL.ecore#//ExplicitInteractionActivity/action"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroidL.ecore#//ExplicitInteractionService"/>
+    <genClasses ecoreClass="AndroidL.ecore#//UseService">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroidL.ecore#//UseService/dest"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroidL.ecore#//UseService/operation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//UseService/arg"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroidL.ecore#//Launchservice">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroidL.ecore#//Launchservice/dest"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroidL.ecore#//ActionOnlyInteraction">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroidL.ecore#//ActionOnlyInteraction/action"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroidL.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//Action/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroidL.ecore#//Action/data"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//Action/category"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroidL.ecore#//Data">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//Data/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//Data/scheme"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//Data/host"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//Data/port"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//Data/path"/>
+    </genClasses>
+    <genClasses ecoreClass="AndroidL.ecore#//Application">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//Application/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//Application/avd"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//Application/workDir"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//Application/packageName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AndroidL.ecore#//Application/mainActivity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//Application/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AndroidL.ecore#//Application/path"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
