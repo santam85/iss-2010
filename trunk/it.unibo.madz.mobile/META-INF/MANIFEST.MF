@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: it.unibo.madz.mobile
+Bundle-Name: it.unibo.madz.unibo
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0
-Bundle-SymbolicName: it.unibo.madz.mobile; singleton:=true
+Bundle-SymbolicName: it.unibo.madz.mobile;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.generator;resolution:=optional,
@@ -12,19 +12,6 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.emf.mwe.utils;resolution:=optional,
  org.eclipse.emf.mwe2.launch;resolution:=optional,
  com.ibm.icu;resolution:=optional,
- org.eclipse.xtext.xtend;resolution:=optional,
- org.eclipse.xtext.util,
- org.eclipse.emf.ecore,
- org.eclipse.emf.common,
- org.antlr.runtime
+ org.eclipse.xtext.xtend;resolution:=optional
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: it.unibo.madz.mobile,
- it.unibo.madz.mobile.services,
- it.unibo.madz.mobile.androidL,
- it.unibo.madz.mobile.androidL.impl,
- it.unibo.madz.mobile.androidL.util,
- it.unibo.madz.mobile.parseTreeConstruction,
- it.unibo.madz.mobile.parser.antlr,
- it.unibo.madz.mobile.parser.antlr.internal,
- it.unibo.madz.mobile.validation
