@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: it.unibo.madz.unibo
+Bundle-Name: it.unibo.madz.mobile
 Bundle-Vendor: My Company
 Bundle-Version: 1.0.0
-Bundle-SymbolicName: it.unibo.madz.mobile;singleton:=true
+Bundle-SymbolicName: it.unibo.madz.mobile; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.generator;resolution:=optional,
