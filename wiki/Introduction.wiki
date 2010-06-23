@@ -1,0 +1,15 @@
+#summary One-sentence summary of this page.
+#labels Featured
+#sidebar TableOfContents
+
+= Introduction =
+
+The home-page of the project developed during the course of Ingegneria dei sistemi software
+
+
+== Details ==
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
