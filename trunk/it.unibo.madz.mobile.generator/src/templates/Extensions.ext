@@ -1,4 +1,0 @@
-import AndroidL::androidL;
-
-sortedGreetings(Model this) :
-	this.greetings.sortBy(g|g.name.toLowerCase());

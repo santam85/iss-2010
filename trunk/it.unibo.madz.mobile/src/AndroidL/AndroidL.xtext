@@ -1,9 +1,0 @@
-grammar AndroidL with org.eclipse.xtext.common.Terminals
-
-generate androidL "http://www.AndroidL"
-
-Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';
