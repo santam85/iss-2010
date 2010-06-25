@@ -1,0 +1,9 @@
+grammar it.unibo.madz.mobile.MyDsl with org.eclipse.xtext.common.Terminals
+
+generate myDsl "http://www.unibo.it/madz/mobile/MyDsl"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
