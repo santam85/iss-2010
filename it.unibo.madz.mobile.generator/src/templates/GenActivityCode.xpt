@@ -1,0 +1,101 @@
+«IMPORT androidL»;
+
+«EXTENSION templates::Extensions»
+
+«DEFINE genComponentCode(AndroidSystem m) FOR androidL::Activity» 
+	«FILE m.application.name+"/src/"+ pToD( m.application.packageName )+ "/"+this.name+".java"-»
+		package «m.application.packageName»; 
+		«EXPAND genActivityImport»
+		
+		/** 
+		* @author AN DEIS Unibo
+		*/ public class 
+		«this.name» extends BaseActivity {
+		
+		«EXPAND genActivtyOnCreate» 
+		
+		/* ---------------------------------- 
+		* Actions related to user commands
+		* 
+		---------------------------------- */
+		
+		«EXPAND genUserCmdAction FOREACH this.actions» 
+		/* -------------------------------------
+		* INPUT
+		 -------------------------------------*/ 
+		«EXPAND genInput»
+} 
+	«ENDFILE» 
+«ENDDEFINE»
+
+«DEFINE genActivityImport FOR androidL::Activity-» 
+	import android.content.Intent; 
+	import android.net.Uri; 
+	import android.os.Bundle;
+	import android.widget.Button; 
+	import android.view.View; 
+	import android.view.View.OnClickListener; 
+	import android.util.Log; 
+«ENDDEFINE»
+
+«DEFINE genActivtyOnCreate FOR androidL::Activity-» 
+@Override
+protected void onCreate(Bundle savedInstanceState) { 
+	super.onCreate(savedInstanceState);
+	setContentView(R.layout.«(this.name+"Layout").toLowerCase()»); 
+	
+	/* ---------------------------------- 
+	* Create user cmd buttons * 
+	 ----------------------------------*/
+	«EXPAND genCmdButton FOREACH this.actions.select(e|e.button)» 
+	/* ---------------------------------- 
+	* Look at input and work * 
+	 ----------------------------------*/
+	
+	lookAtInput(); 
+}//onCreate
+«ENDDEFINE»
+
+«DEFINE genCmdButton FOR androidL::LocalAction» 
+	Button «this.action.name»Button = (Button) findViewById(R.id.«this.action.name»); 
+	«this.action.name»Button.setOnClickListener(new OnClickListener() { 
+		@Override
+		public void onClick(View v) { 
+			do«this.action.name»( );
+		}
+	}); 
+«ENDDEFINE»
+
+«DEFINE genUserCmdAction FOR androidL::LocalAction-» 
+	protected void do«this.action.name»() { 
+		println("executing command ... " + "«this.action.name»" ); 
+	} 
+«ENDDEFINE»
+
+«DEFINE genInput FOR androidL::Activity-» 
+	//Find the activity input in order to decide what to do
+	protected void lookAtInput() {
+		Intent sourceIntent = getIntent(); 
+		println("CounterActivity received \n" + intentToString(sourceIntent) ); 
+		if( sourceIntent != null && sourceIntent.getAction() != null ) 
+			analyseInput(sourceIntent);
+	}
+	
+	//Check the nature of the activity input 
+	protected void analyseInput( Intent i ) { 
+		if( i.getAction().contains("action.MAIN") ) 
+			doJob();
+		else 
+			execAction(i); 
+	}
+
+	//Perform some local job 
+	protected void doJob() { 
+		println("«this.name» local job (TODO)" ); 
+	}
+
+	//Execute some action 
+	protected void execAction(Intent input) { 
+		println("«this.name» execAction (TODO) "+ input.getAction() );
+	} 
+«ENDDEFINE»

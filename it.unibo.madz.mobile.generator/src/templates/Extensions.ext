@@ -1,0 +1,3 @@
+
+String pToD( String packageName ) :
+	packageName.replaceAll( "\\." , "/") ;

@@ -1,0 +1,34 @@
+«IMPORT androidL»
+
+«EXTENSION templates::Extensions»
+/* --------------------------------------------
+Generate layout 
+-------------------------------------------- */ 
+«DEFINE genLayout(androidL::AndroidSystem m) FOR androidL::Activity» 
+	«FILE m.application.name+"/res/layout/"+ 
+			(this.name+"Layout.xml").toLowerCase()-» 
+			<?xml version="1.0" encoding="utf-8"?> 
+			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+			android:orientation="vertical" android:layout_width="fill_parent" 
+			android:layout_height="fill_parent" >
+		«EXPAND genView» 
+		«EXPAND genButton» 
+		</LinearLayout> 
+	«ENDFILE» 
+«ENDDEFINE»
+
+«DEFINE genView FOR androidL::Activity» 
+	<TextView android:layout_width="fill_parent" 
+	android:layout_height="wrap_content" android:text="" 
+	android:id="@+id/output"/> 
+«ENDDEFINE»
+
+«DEFINE genButton FOR androidL::Activity» 
+	«EXPAND genButton FOREACH this.actions.select(e|e.button)» 
+«ENDDEFINE»
+
+«DEFINE genButton FOR androidL::LocalAction»
+	<Button android:text="«this.action.name»
+	" android:id="@+id/«this.action.name»
+	" android:layout_width="wrap_content" android:layout_height="wrap_content"> </Button>
+«ENDDEFINE»

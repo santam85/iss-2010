@@ -1,0 +1,5 @@
+
+«EXTENSION templates::Extensions»
+«DEFINE main FOR androidL::AndroidSystem» 
+	«EXPAND GenActivityCode::genComponentCode(this) FOREACH this.component.typeSelect(androidL::Activity)» 
+«ENDDEFINE»
