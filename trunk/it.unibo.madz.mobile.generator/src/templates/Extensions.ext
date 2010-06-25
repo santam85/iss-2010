@@ -1,4 +1,0 @@
-import it::unibo::madz::mobile::myDsl;
-
-sortedGreetings(Model this) :
-	this.greetings.sortBy(g|g.name.toLowerCase());
